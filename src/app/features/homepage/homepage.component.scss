@@ -1,5 +1,6 @@
 .go-testing-container{
     display: flex;
+    height: 100vh;
 }
 
 .button-container{
@@ -11,4 +12,15 @@
 
 .home-image{
 width: 70vw;
+}
+
+.info-card-container{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    padding: 50px;
+    border-radius: 15px;
+    background-color: rgba(64, 64, 64, 0.22);
 }

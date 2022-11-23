@@ -15,6 +15,13 @@ const routes: Routes = [
         (module) => module.QuestionnaireModule
       ),
   },
+  {
+    path: 'result',
+    loadChildren: () =>
+      import('./features/result/result.module').then(
+        (module) => module.ResultModule
+      ),
+  },
 ];
 
 @NgModule({

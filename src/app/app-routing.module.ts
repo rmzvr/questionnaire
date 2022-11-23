@@ -8,6 +8,13 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'login', component: SigninComponent },
   { path: 'register', component: SignupComponent },
+  {
+    path: 'questionnaire',
+    loadChildren: () =>
+      import('./features/questionnaire/questionnaire.module').then(
+        (module) => module.QuestionnaireModule
+      ),
+  },
 ];
 
 @NgModule({

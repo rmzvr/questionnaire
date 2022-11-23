@@ -1,7 +1,14 @@
+$basic-color: #C1E9FC;
+
+
 .example-spacer {
   flex: 1 1 auto;
 }
 
 .button-signin {
   margin-right: 0.6rem;
+}
+
+.mat-toolbar {
+  background-color: $basic-color;
 }

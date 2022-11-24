@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { EMPTY, Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from './services/questions.service';
 
 @Component({

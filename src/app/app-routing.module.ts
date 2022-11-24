@@ -9,23 +9,9 @@ import { SigninComponent } from './features/signin/signin.component';
 import { SignupComponent } from './features/signup/signup.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent ,
-  children: [{
-    path: 'call-form',
-    component: CallFormComponent
-  },
   {
-      path: 'therapy-form',
-      component: TherapyFormComponent 
+    path: '', component: HomepageComponent
   },
-  {
-    path: 'immediately-form',
-    component: ImCallFormComponent 
-},
-
-
-]
-},
   { path: 'login', component: SigninComponent },
   { path: 'register', component: SignupComponent },
   { path: 'restore', component: RestorePasswordComponent },

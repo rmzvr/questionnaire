@@ -1,1 +1,16 @@
-<p>call-form works!</p>
+<div class="form-overlay">
+    <div class="form-container">
+        <label class="formLabel">
+            Phone Number:
+            <input class="form-input" type="tel" id="phoneNumber" class="form-input" minlength="8" maxlength="30"
+                placeholder="Enter your phone number" [(ngModel)]="phoneNumber">
+        </label>
+    </div>
+
+    <div class="button-container">
+        <button class="save-button button" id="save" routerLink="/" (click)="add(phoneNumber)">&#10003;</button>
+        <button class="cancel-button button" id="cancel" routerLink="/">&#10008;</button>
+
+
+    </div>
+</div>

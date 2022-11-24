@@ -14,6 +14,10 @@ export class QuestionsService {
     return this.questions;
   }
 
+  public getScore(): any {
+    return this.score$
+  }
+
   public increaseScore(value: number): any {
     this.score$.next((this.score += value));
   }

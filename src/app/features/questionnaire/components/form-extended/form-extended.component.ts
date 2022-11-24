@@ -52,20 +52,12 @@ export class FormExtendedComponent {
   public answer(option: any): void {
     this.selectedOption = option;
 
-    if (this.previousSelectedOption?.id === this.selectedOption.id) {
-      this.nextQuestion();
-
-      return;
-    }
-
     if (this.previousSelectedOption) {
       this.questionsService.decreaseScore(this.previousSelectedOption.value);
     }
 
     this.questionsService.increaseScore(this.selectedOption.value);
 
-    if (this.selectedOption) {
-      this.previousSelectedOption = this.selectedOption;
-    }
+    this.previousSelectedOption = this.selectedOption;
   }
 }

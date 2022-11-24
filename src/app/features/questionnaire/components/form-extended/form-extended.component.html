@@ -6,8 +6,9 @@
     {{ currentQuestion.questionText }}
   </p>
 
-  <ul class="options" *ngFor="let option of currentQuestion.options">
-    <li class="option" [class.selected]="selectedOption?.id === option.id" (click)="answer(option)">
+  <ul class="options">
+    <li class="option" *ngFor="let option of currentQuestion.options"
+      [class.selected]="selectedOption?.id === option.id" (click)="answer(option)">
       {{ option.text }}
     </li>
   </ul>
@@ -29,5 +30,6 @@
 </ng-template>
 
 <ng-template #buttonFinish>
-  <button routerLink="/result" class="" mat-flat-button color="primary" [disabled]="selectedOption === null">Finish</button>
+  <button routerLink="/result" class="" mat-flat-button color="primary"
+    [disabled]="selectedOption === null">Finish</button>
 </ng-template>

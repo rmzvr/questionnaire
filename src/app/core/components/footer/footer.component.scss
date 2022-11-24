@@ -1,0 +1,29 @@
+$basic-color: #C1E9FC;
+
+
+footer{
+    height: 100px;
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: $basic-color;
+}
+
+.contacts-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+
+.contact-item{
+display: flex;
+}
+
+.copiright-container{
+    flex: 1;
+}
+
+.logo-container{
+    flex: 1;
+}

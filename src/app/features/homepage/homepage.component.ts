@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProjectInfo } from 'src/app/core/models/projectInfo.model';
 import { Specialists } from 'src/app/core/models/specialist.model';
 
 @Component({
@@ -27,4 +28,8 @@ export class HomepageComponent {
     }
   ]
 
+  projectInfo: ProjectInfo[] = [
+    { id: '1', title: 'What we do?', description: 'Our company provides a psychological assistance service (consultations with psychologists, trainings and therapy). We have created a brand new website, a tool that will help us help more people and support our clients and as the first step for understanding yourself and your state is to understand what you feel, what emotions you are experiencing and why. It is often difficult for people to identify specific emotions and therefore we want to help them with this first step with the help of an emotion map. With the help of simple psychological questionnaires, we can help define an emotion that will build a personal map of emotions for each of our users. If the user is worried that he feels a certain range of emotions and this interferes with the quality of his life, we will offer him simple tips to cope with emotions or work out his states in more detail using the services of our service. ' },
+    { id: '2', title: 'Why trust us?', description: 'Our questions and algorithms are unique to us and are built on decades of study in vocational testing. Our algorithms continuously improve with millions of daily data points to give you real-time accuracy. We firmly believe that you own your data, not us. We never sell your personal data to third parties.' }
+  ]
 }

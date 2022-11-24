@@ -41,5 +41,10 @@ height: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
 
+.call-container{
+    display: flex;
+    justify-content: end;
+    padding: 50px;
 }

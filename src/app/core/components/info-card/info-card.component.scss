@@ -3,11 +3,12 @@ $basic-color: #c1e9fc;
 
 mat-card {
     margin-bottom: 50px;
-}
+    font-family: 'Cormorant Garamond', serif;}
 
 mat-card-title {
     padding: 10px;
     color: $accent-color;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 mat-card {
@@ -27,18 +28,12 @@ mat-card {
         top: -15px;
         left: -15px;
     }
-    &::after {
-        bottom: -15px;
-        right: -15px;
-    }
+    
     &:hover {
         &::before {
             top: 15px;
             left: 15px;
         }
-        &::after {
-            bottom: 15px;
-            right: 15px;
-        }
+       
     }
 }

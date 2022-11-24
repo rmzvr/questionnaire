@@ -9,6 +9,14 @@
 </div>
 
 <div class="info-card-container">
-<app-info-card></app-info-card>
+    <app-info-card></app-info-card>
+    <div class="specialist-card-container" >
+        <div *ngFor="let specialist of specialists ">
+            <app-specialist-card [id]="specialist.id" [name]="specialist.name" [info]="specialist.info"
+            [image]="specialist.image"></app-specialist-card>
+
+        </div>
+        
+    </div>
 
 </div>

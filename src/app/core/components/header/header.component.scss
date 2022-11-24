@@ -1,9 +1,5 @@
 $basic-color: #C1E9FC;
 
-body{
-  position: relative;
-}
-
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -14,6 +10,8 @@ body{
 
 .mat-toolbar {
   background-color: $basic-color;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
+  z-index: 99;
 }

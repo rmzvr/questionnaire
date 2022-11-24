@@ -7,10 +7,11 @@ import {MatCardModule} from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { StartedButtonComponent } from './components/started-button/started-button.component';
 import { InfoCardComponent } from './components/info-card/info-card.component';
+import { SpecialistCardComponent } from './components/specialist-card/specialist-card.component';
 
 @NgModule({
-  declarations: [HeaderComponent, StartedButtonComponent, InfoCardComponent],
+  declarations: [HeaderComponent, StartedButtonComponent, InfoCardComponent, SpecialistCardComponent],
   imports: [CommonModule, MatToolbarModule, MatButtonModule, RouterModule,MatCardModule],
-  exports: [HeaderComponent,StartedButtonComponent,InfoCardComponent],
+  exports: [HeaderComponent,StartedButtonComponent,InfoCardComponent,SpecialistCardComponent],
 })
 export class CoreModule {}

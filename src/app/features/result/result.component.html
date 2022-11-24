@@ -1,1 +1,34 @@
-<p>result works!</p>
+<app-header></app-header>
+<div class="container">
+  <img class="image" src="../../../assets/result-page.webp" alt="result image" width="600px">
+
+  <div class="cards">
+    <mat-card>
+      <mat-card-title class="card-title">Beck scale</mat-card-title>
+      <mat-card-content>
+        <a routerLink="/questionnaire" mat-raised-button color="primary">Take test again</a>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title class="content-title">Your result {{ score$ | async }}</mat-card-title>
+
+      <p class="result">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, optio. Inventore, ipsum
+        praesentium et earum nihil nisi culpa accusamus exercitationem repudiandae magni laboriosam necessitatibus
+        distinctio similique consectetur esse sequi velit!
+      </p>
+
+      <mat-card-subtitle class="content-subtitle">Recommend to your personality</mat-card-subtitle>
+
+      <p class="recommendations">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum distinctio maiores ea, esse voluptates sequi
+        exercitationem est maxime autem numquam excepturi, ipsum hic quasi explicabo nihil cupiditate ab! Quos,
+        consectetur!
+      </p>
+
+      <mat-card-footer>
+        <button mat-raised-button color="primary">Send on email</button>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

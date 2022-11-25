@@ -1,0 +1,55 @@
+.container {
+  min-height: calc(100vh - 64px);
+
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 33%, rgba(0, 159, 255, 1) 100%);
+
+  display: grid;
+  justify-content: center;
+  align-content: flex-start;
+
+  padding-bottom: 5rem;
+}
+
+.image {
+  margin-block: 3rem;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+
+mat-card {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+
+  padding-block: 1rem;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.content-title {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.result,
+.recommendations {
+  max-width: 70ch;
+  text-align: center;
+}
+
+mat-card-footer {
+  display: grid;
+  place-content: center;
+}
+
+.content-subtitle {
+  font-size: 1.1rem;
+  color: black;
+}

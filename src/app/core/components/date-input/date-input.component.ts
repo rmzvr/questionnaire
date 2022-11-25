@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 
@@ -8,7 +8,9 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
   styleUrls: ['./date-input.component.scss']
 })
 export class DateInputComponent {
-  @Output() therapyDate: Date = new Date()
+  therapyDate: Date = new Date()
+  @Output() clickEmitter = new EventEmitter();
+
   
   minDate: Date;
 
@@ -31,6 +33,8 @@ export class DateInputComponent {
       return
     }
     this.therapyDate = event.value
+
+    this.clickEmitter.emit(this.therapyDate)
 
   }
 }

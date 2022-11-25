@@ -9,24 +9,20 @@ import { Specialists } from '../../models/specialist.model';
 })
 export class TherapyFormComponent {
 
-  @Input() therapyDate:string=''
+  @Input() therapyDate:Date = new Date()
 
   phoneNumber: string = ''
   specialistName: string = ''
-  // therapyDate: string = ''
 
 
   constructor(
     public dialog: MatDialogRef<TherapyFormComponent>
   ) { }
 
-  add(phoneNumbert: string, specialistName: string,therapyDate: string ) {
+  add(phoneNumbert: string, specialistName: string,therapyDate: Date ) {
     this.phoneNumber = phoneNumbert
     this.specialistName = specialistName
     this.therapyDate = therapyDate
-
-    console.log( this.specialistName, this.phoneNumber,  this.therapyDate 
-      )
 
     this.close()
   }

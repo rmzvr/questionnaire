@@ -1,1 +1,31 @@
 <app-header></app-header>
+<div class="go-testing-container">
+    <div class="image-comtainer">
+        <img class="home-image" src="assets/img/home-page.jpeg">
+    </div>
+    <div class="button-container">
+        <app-started-button></app-started-button>
+    </div>
+</div>
+
+<div class="card-container">
+    <h2>About Us</h2>
+    <div class="info-container" *ngFor="let item of projectInfo ">
+        <app-info-card [title]="item.title" [description]="item.description"></app-info-card>
+    </div>
+
+
+    <h2>Our Psychologists</h2>
+
+    <div class="specialist-container">
+        <div *ngFor="let specialist of specialists ">
+            <app-specialist-card [id]="specialist.id" [name]="specialist.name" [info]="specialist.info"
+                [image]="specialist.image"></app-specialist-card>
+
+        </div>
+
+    </div>
+
+</div>
+
+<app-footer></app-footer>

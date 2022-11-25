@@ -1,0 +1,45 @@
+h2{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2em;
+}
+
+.go-testing-container{
+    display: flex;
+    height: 100vh;
+}
+
+.button-container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-comtainer{
+    padding: 30px;
+    flex: 1;
+}
+
+.home-image{
+height: 90%;
+}
+
+.card-container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    padding: 50px;
+    border-radius: 15px;
+    background-color: rgba(64, 64, 64, 0.22);
+
+}
+
+.specialist-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}

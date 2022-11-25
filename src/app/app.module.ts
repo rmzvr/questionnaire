@@ -8,10 +8,10 @@ import { HomepageModule } from './features/homepage/homepage.module';
 import { SignupModule } from './features/signup/signup.module';
 import { SigninModule } from './features/signin/signin.module';
 import { RestorePasswordModule } from './features/restore-password/restore-password.module';
-import { TrainingsComponent } from './features/trainings/trainings.component';
+import { TrainingsModule } from './features/trainings/trainings.module';
 
 @NgModule({
-  declarations: [AppComponent, TrainingsComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,7 +19,8 @@ import { TrainingsComponent } from './features/trainings/trainings.component';
     HomepageModule,
     SignupModule,
     SigninModule,
-    RestorePasswordModule
+    RestorePasswordModule,
+    TrainingsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

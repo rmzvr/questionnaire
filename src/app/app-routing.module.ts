@@ -4,6 +4,7 @@ import { HomepageComponent } from './features/homepage/homepage.component';
 import { RestorePasswordComponent } from './features/restore-password/restore-password.component';
 import { SigninComponent } from './features/signin/signin.component';
 import { SignupComponent } from './features/signup/signup.component';
+import { TrainingsComponent } from './features/trainings/trainings.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -31,6 +32,8 @@ const routes: Routes = [
         (module) => module.ResultModule
       ),
   },
+  { path: 'trainings', component: TrainingsComponent },
+
 ];
 
 @NgModule({

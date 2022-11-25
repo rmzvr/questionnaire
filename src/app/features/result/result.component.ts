@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuestionsService } from '../questionnaire/services/questions.service';
 
 @Component({
@@ -8,9 +9,17 @@ import { QuestionsService } from '../questionnaire/services/questions.service';
 })
 export class ResultComponent implements OnInit {
   public score$: any;
-  constructor(private questionsService: QuestionsService) {}
+
+  constructor(
+    private questionsService: QuestionsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.score$ = this.questionsService.getScore();
+  }
+
+  public navitageToQuestionnairePage(): void {
+    this.router.navigate([this.router.url.slice(0, -6)]);
   }
 }

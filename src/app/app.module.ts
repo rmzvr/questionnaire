@@ -8,9 +8,10 @@ import { HomepageModule } from './features/homepage/homepage.module';
 import { SignupModule } from './features/signup/signup.module';
 import { SigninModule } from './features/signin/signin.module';
 import { RestorePasswordModule } from './features/restore-password/restore-password.module';
+import { TrainingsComponent } from './features/trainings/trainings.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TrainingsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

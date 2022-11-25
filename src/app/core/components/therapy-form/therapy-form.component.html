@@ -1,1 +1,33 @@
-<p>therapy-form works!</p>
+<div class="form-container">
+    <h2 class="form-title">Register for therapy</h2>
+
+    <div class="text-container">
+       <p>Please,<a routerLink="/register">register</a> and return</p>
+    </div>
+
+    <div class="register-form-container">
+        <label class="formLabel">
+            Specialist name:
+                <select class="form-input" name="specialist-name" id="specialist-name" placeholder="Enter specialist" [(ngModel)]="specialistName">
+                    <option value="Dr. Michelle Lind">Dr. Michelle Lind</option>
+                    <option value="Dr.Elizabeth Strong">Dr.Elizabeth Strong</option>
+                    <option value="Dr.Tonia Cassaday">Dr.Tonia Cassaday</option>
+                    <option value="Dr.Dawn Brown">Dr.Dawn Brown</option>
+                </select>
+        </label>
+
+        <label class="formLabel">
+            Fill phone number:
+            <input class="form-input" type="" id="phoneNumber" minlength="8" maxlength="30"
+                placeholder="Enter your phone number" [(ngModel)]="phoneNumber">
+        </label>
+
+        <app-date-input name="fieldName" ngDefaultControl [(ngModel)]="therapyDate"></app-date-input>
+    
+    </div>
+
+    <div class="button-container">
+        <button class="save-button button" id="save" (click)="add(phoneNumber,specialistName,therapyDate)">&#10003;</button>
+        <button class="cancel-button button" id="cancel" (click)="close()">&#10008;</button>
+    </div>
+</div>

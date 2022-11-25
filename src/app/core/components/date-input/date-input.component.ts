@@ -22,13 +22,13 @@ export class DateInputComponent {
     this.minDate = new Date(currentYear, currentMonth, currentDay);
   }
 
-  myFilter = (d: Date | null): boolean => {
+  public myFilter = (d: Date | null): boolean => {
     const day = (d || new Date()).getDay();
     return day !== 0;
   };
 
 
-  addEvent( event: MatDatepickerInputEvent<Date>) {
+  public addEvent( event: MatDatepickerInputEvent<Date>):void {
     if(!event.value){
       return
     }

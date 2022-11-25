@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Specialists } from '../../models/specialist.model';
 
 @Component({
   selector: 'app-therapy-form',

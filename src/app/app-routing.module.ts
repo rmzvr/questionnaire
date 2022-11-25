@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CallFormComponent } from './core/components/call-form/call-form.component';
-import { ImCallFormComponent } from './core/components/im-call-form/im-call-form.component';
-import { TherapyFormComponent } from './core/components/therapy-form/therapy-form.component';
 import { HomepageComponent } from './features/homepage/homepage.component';
 import { RestorePasswordComponent } from './features/restore-password/restore-password.component';
 import { SigninComponent } from './features/signin/signin.component';

@@ -6,6 +6,8 @@ h2{
 .go-testing-container{
     display: flex;
     height: 100vh;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .button-container{
@@ -17,11 +19,14 @@ h2{
 
 .image-comtainer{
     padding: 30px;
-    flex: 1;
+    flex: 2;
+    align-items: center;
+
 }
 
 .home-image{
-height: 90%;
+    width: 100%;
+    min-width: 500px;
 }
 
 .card-container{
@@ -46,4 +51,10 @@ height: 90%;
 .call-container{
     display: flex;
     justify-content: flex-end;
+}
+
+app-call-menu{
+    position: fixed;
+    bottom: 130px;
+    right: 20px;
 }

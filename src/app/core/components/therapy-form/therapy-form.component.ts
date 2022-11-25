@@ -11,6 +11,7 @@ export class TherapyFormComponent {
 
   @Input() therapyDate:Date = new Date()
 
+  isRegister:boolean = false
   phoneNumber: string = ''
   specialistName: string = ''
 

@@ -1,5 +1,5 @@
 <div class="call-menu-container">
-  <button id="call-menu-buttton" mat-button color="warn" [matMenuTriggerFor]="menu">Call</button>
+  <button id="call-menu-buttton" mat-button  [matMenuTriggerFor]="menu">Call</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="openCallDialog()"><mat-icon> call</mat-icon>Request a call</button>
   <button mat-menu-item (click)="openImCallDialog()"><mat-icon>phone_in_talk</mat-icon> Call immediately</button>

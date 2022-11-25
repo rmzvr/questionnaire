@@ -1,11 +1,11 @@
 <div class="form-container">
     <h2 class="form-title">Register for therapy</h2>
 
-    <div class="text-container">
-       <p>Please,<a routerLink="/register">register</a> and return</p>
+    <div class="text-container" *ngIf="!isRegister">
+       <p>Please,<a (click)="close()" routerLink="/register">register</a> and return</p>
     </div>
 
-    <div class="register-form-container">
+    <div class="register-form-container" *ngIf="isRegister">
         <label class="formLabel">
             Specialist name:
                 <select class="form-input" name="specialist-name" id="specialist-name" placeholder="Enter specialist" [(ngModel)]="specialistName">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="button-container">
-        <button class="save-button button" id="save" (click)="add(phoneNumber,specialistName,therapyDate)">&#10003;</button>
+        <button class="save-button button" id="save" (click)="add(phoneNumber,specialistName,therapyDate)" *ngIf="isRegister">&#10003;</button>
         <button class="cancel-button button" id="cancel" (click)="close()">&#10008;</button>
     </div>
 </div>

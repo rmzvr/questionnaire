@@ -9,6 +9,7 @@ import { SignupModule } from './features/signup/signup.module';
 import { SigninModule } from './features/signin/signin.module';
 import { RestorePasswordModule } from './features/restore-password/restore-password.module';
 import { TrainingsModule } from './features/trainings/trainings.module';
+import { ProfileModule } from './features/profile/profile.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { TrainingsModule } from './features/trainings/trainings.module';
     SignupModule,
     SigninModule,
     RestorePasswordModule,
-    TrainingsModule
+    TrainingsModule,
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent],

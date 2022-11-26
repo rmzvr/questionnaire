@@ -5,6 +5,7 @@ import { ImCallFormComponent } from './core/components/im-call-form/im-call-form
 import { TherapyFormComponent } from './core/components/therapy-form/therapy-form.component';
 import { HomepageComponent } from './features/homepage/homepage.component';
 import { RestorePasswordComponent } from './features/restore-password/restore-password.component';
+import { ProfileComponent } from './features/profile/profile.component';
 import { SigninComponent } from './features/signin/signin.component';
 import { SignupComponent } from './features/signup/signup.component';
 import { TrainingsComponent } from './features/trainings/trainings.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
         (module) => module.QuestionnairesModule
       ),
   },
+  { path: 'profile', component: ProfileComponent },
   {
     path: 'questionnaires/:name',
     loadChildren: () =>

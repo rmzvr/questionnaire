@@ -10,15 +10,15 @@ import { Article } from './mock-data/article';
 })
 export class TrainingsComponent {
 
-
   constructor(
     public dialog: MatDialog,
   ) { }
+
   public articles = Article
 
 
-  openDialog(title: string, description: string,fullDescription:string,createdDate: string): void {
+ protected openDialog(title: string, description: string, fullDescription: string, createdDate: string): void {
     this.dialog.open(ArticleDetailsComponent,
-      { data: { title, description ,fullDescription,createdDate } })
+      { data: { title, description, fullDescription, createdDate } })
   }
 }

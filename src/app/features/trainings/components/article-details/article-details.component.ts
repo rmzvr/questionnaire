@@ -1,5 +1,5 @@
-import { Component,Output, EventEmitter, Inject, OnInit } from '@angular/core';
-import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Output, EventEmitter, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -8,28 +8,27 @@ import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./article-details.component.scss']
 })
 export class ArticleDetailsComponent {
-title:string=''
-description:string=''
-fullDescription:string =''
-createdDate:string=''
+  title: string = ''
+  description: string = ''
+  fullDescription: string = ''
+  createdDate: string = ''
 
-constructor(
-  public dialog: MatDialogRef<ArticleDetailsComponent>,
-  @Inject (MAT_DIALOG_DATA) public data: ArticleDetailsComponent
-  ) {}
+  constructor(
+    public dialog: MatDialogRef<ArticleDetailsComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: ArticleDetailsComponent
+  ) { }
 
 
-ngOnInit() {
-  this.title = this.data.title;
-  this.description = this.data.description;
-  this.fullDescription=this.data.fullDescription;
-  this.createdDate=this.data.createdDate
-}
+  ngOnInit() {
+    this.title = this.data.title;
+    this.description = this.data.description;
+    this.fullDescription = this.data.fullDescription;
+    this.createdDate = this.data.createdDate
+  }
 
-close(){
-  this.dialog.close()
+  protected close():void {
+    this.dialog.close()
 
-}
-
+  }
 
 }

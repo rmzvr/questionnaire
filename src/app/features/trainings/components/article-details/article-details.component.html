@@ -3,11 +3,10 @@
     <mat-dialog-content class="text-container">
         <p>{{description}}</p>
         <div class="text-item" [innerHTML]="fullDescription"></div>
-    <span>{{createdDate}}</span>
-
+        <span>{{createdDate}}</span>
     </mat-dialog-content>
-
-    <div  class="button-container">
-        <button mat-stroked-button color="primary" class="cancel-button button" id="cancel" (click)="close()">&#10008;</button>
+    <div class="button-container">
+        <button mat-stroked-button color="primary" class="cancel-button button" id="cancel"
+            (click)="close()">&#10008;</button>
     </div>
 </div>

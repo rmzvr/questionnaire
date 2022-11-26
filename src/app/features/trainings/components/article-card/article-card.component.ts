@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ArticleCardComponent {
   @Input()
-  title: string = ''
+ public  title: string = ''
   @Input()
-  description: string = ''
+  public description: string = ''
 
 }

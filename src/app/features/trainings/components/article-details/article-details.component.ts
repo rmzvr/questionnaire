@@ -8,10 +8,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./article-details.component.scss']
 })
 export class ArticleDetailsComponent {
-  title: string = ''
-  description: string = ''
-  fullDescription: string = ''
-  createdDate: string = ''
+  public title: string = ''
+  public description: string = ''
+  public fullDescription: string = ''
+  public createdDate: string = ''
 
   constructor(
     public dialog: MatDialogRef<ArticleDetailsComponent>,
@@ -26,7 +26,7 @@ export class ArticleDetailsComponent {
     this.createdDate = this.data.createdDate
   }
 
-  protected close():void {
+  protected close(): void {
     this.dialog.close()
 
   }

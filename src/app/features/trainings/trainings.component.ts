@@ -17,7 +17,7 @@ export class TrainingsComponent {
   public articles = Article
 
 
- protected openDialog(title: string, description: string, fullDescription: string, createdDate: string): void {
+  protected openDialog(title: string, description: string, fullDescription: string, createdDate: string): void {
     this.dialog.open(ArticleDetailsComponent,
       { data: { title, description, fullDescription, createdDate } })
   }

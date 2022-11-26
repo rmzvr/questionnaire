@@ -1,3 +1,16 @@
+* {
+    font-family: "Cormorant Garamond", serif;
+}
+
+$accent-color: #1a3088;
+
+.dialog-container > h2 {
+    font-family: "Cormorant Garamond", serif;
+    text-align: center;
+    color: $accent-color;
+    font-size: 2.5em;
+}
+
 .mat-mdc-dialog-content {
     padding: 50px;
     display: flex;

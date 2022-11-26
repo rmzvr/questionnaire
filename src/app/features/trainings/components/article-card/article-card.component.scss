@@ -1,21 +1,53 @@
 $accent-color: #1a3088;
+$accent-color-2:#98cbf8;
 $basic-color: #c1e9fc;
 
+*{
+    font-family: 'Cormorant Garamond', serif;
+    box-sizing: border-box;
+}
 mat-card{
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    &:hover{
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        animation-name: card;
-        animation-duration: 0.50s;
-        border-left: 5px solid $basic-color;
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    &::before ,
+    &::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        border: 2px solid $accent-color-2;
+        transition: all 0.25s ease-out;
+    }
+    &::before {
+        background-color: $accent-color-2;
+        top: -9px;
+        left: -9px;
+        border-radius: 5px;
+    }
+
+    &::after {
+        border: 2px solid #ff00aa;
+        top: 9px;
+        left: 9px;
+    }
+    
+    &:hover {
+        &::before {
+            top: 7px;
+            left: 7px;
+        }
+        &::after{
+            top: -7px;
+            left: -7px;
+        }
+    }
+
+    &:hover span{
+        color: #ff00aa;
     }
 }
 

@@ -4,6 +4,7 @@
     <img src="../../../assets/img/training.jpeg" alt="">
 </div>
 <div class="info-container">
+    <h2>Mental Health</h2>
     <div *ngFor="let item of articles ">
         <app-article-card [title]="item.title" [description]="item.description"
             (click)="openDialog(item.title, item.description,item.fullDescription,item.createdDate) ">

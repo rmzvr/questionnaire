@@ -9,7 +9,7 @@ export const Article = [
         <p> One of the most common anxiety disorders is generalized anxiety disorder. To identify if someone has generalized anxiety disorder, a clinician will look for symptoms such as excessive, hard-to-control worry occurring most days over six months. The worry may jump from topic to topic. Generalized anxiety disorder is also accompanied by the physical symptoms of anxiety.</p>
         <p> Another type of anxiety disorder is panic disorder, which is marked by sudden attacks of anxiety that may leave a person sweating, dizzy, and gasping for air. Anxiety may also manifest in the form of specific phobias (such as fear of flying) or as social anxiety, which is marked by a pervasive fear of social situations.</p>
         <p> Anxiety disorders can be treated with psychotherapy, medication, or a combination of the two. One of the most widely used therapeutic approaches is cognitive behavioral therapy, which focuses on changing maladaptive thought patterns related to the anxiety. Another potential treatment is exposure therapy, which involves confronting anxiety triggers in a safe, controlled way in order to break the cycle of fear around the trigger.</p>`,
-        createdDate: "Sat Nov 26 2022 14:07:20 GMT+0200",
+        createdDate: "Sat Nov 26 2022 14:07:20 ",
         image: ''
 
     },
@@ -30,7 +30,7 @@ export const Article = [
        <p> These findings suggest that social media content about stressful public events can help people process the news without getting overwhelmed by it, according to Myrick.
         “Public health advocates or government agencies could potentially benefit by using memes as a cheap, easily accessible way to communicate about stressful events with the public, though they should avoid overly cute memes,” Myrick said.</p>
         <p> “The positive emotions associated with this type of content may make people feel psychologically safer and therefore better able to pay attention to the underlying messages related to health threats.” </p>`,
-        createdDate: 'Mon Nov 18 2021 12:07:20 GMT+0200',
+        createdDate: 'Mon Nov 18 2021 12:07:20 ',
         image: ''
     },
     {
@@ -145,7 +145,7 @@ export const Article = [
        <h2> Treatment Resistant Depression</h2>
        <p> About 1/3 of people treated for depression try several treatment methods without success. If that's you, you might have treatment resistant depression. There are many reasons your depression might be treatment resistant. For example, you might have other conditions that make your depression difficult to treat. 
         If you're diagnosed with treatment resistant depression, your doctor might recommend some less conventional treatment options. Electroconvulsive therapy (ECT) is sometimes helpful in this situation.</p>`,
-        createdDate: 'Mon Nov 18 2021 12:07:20 GMT+0200',
+        createdDate: 'Mon Nov 18 2021 12:07:20 ',
         image: ''
 
     },
@@ -182,7 +182,7 @@ export const Article = [
         be designed to help you improve your skills in areas such as time management, other elements might include identifying employer-sponsored wellness resources you can tap into, clarifying what's expected of you, getting necessary resources or support from colleagues, enriching your job to include more challenging or meaningful tasks, or making changes to your physical 
         workspace to make it more comfortable and reduce strain.Get some support. Accepting help from trusted friends and family members can improve your ability to manage stress. Your employer may also have stress management resources available through an employee assistance program, including online information, available counseling, and referral to mental health professionals,
         if needed. If you continue to feel overwhelmed by work stress, you may want to talk to a psychologist, who can help you better manage stress and change unhealthy behavior.</p>`,
-        createdDate: 'Mon Nov 18 2021 12:07:20 GMT+0200',
+        createdDate: 'Mon Nov 18 2021 12:07:20 ',
         image: ''
 
     }

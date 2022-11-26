@@ -9,8 +9,7 @@ export const Article = [
         <p> One of the most common anxiety disorders is generalized anxiety disorder. To identify if someone has generalized anxiety disorder, a clinician will look for symptoms such as excessive, hard-to-control worry occurring most days over six months. The worry may jump from topic to topic. Generalized anxiety disorder is also accompanied by the physical symptoms of anxiety.</p>
         <p> Another type of anxiety disorder is panic disorder, which is marked by sudden attacks of anxiety that may leave a person sweating, dizzy, and gasping for air. Anxiety may also manifest in the form of specific phobias (such as fear of flying) or as social anxiety, which is marked by a pervasive fear of social situations.</p>
         <p> Anxiety disorders can be treated with psychotherapy, medication, or a combination of the two. One of the most widely used therapeutic approaches is cognitive behavioral therapy, which focuses on changing maladaptive thought patterns related to the anxiety. Another potential treatment is exposure therapy, which involves confronting anxiety triggers in a safe, controlled way in order to break the cycle of fear around the trigger.</p>`,
-        createdDate: "Sat Nov 26 2022 14:07:20 ",
-        image: ''
+        createdDate: "Sat Nov 26 2022 14:07:20 "
 
     },
     {
@@ -30,8 +29,7 @@ export const Article = [
        <p> These findings suggest that social media content about stressful public events can help people process the news without getting overwhelmed by it, according to Myrick.
         “Public health advocates or government agencies could potentially benefit by using memes as a cheap, easily accessible way to communicate about stressful events with the public, though they should avoid overly cute memes,” Myrick said.</p>
         <p> “The positive emotions associated with this type of content may make people feel psychologically safer and therefore better able to pay attention to the underlying messages related to health threats.” </p>`,
-        createdDate: 'Mon Nov 18 2021 12:07:20 ',
-        image: ''
+        createdDate: 'Mon Nov 18 2021 12:07:20 '
     },
     {
         id: '3',
@@ -145,8 +143,7 @@ export const Article = [
        <h2> Treatment Resistant Depression</h2>
        <p> About 1/3 of people treated for depression try several treatment methods without success. If that's you, you might have treatment resistant depression. There are many reasons your depression might be treatment resistant. For example, you might have other conditions that make your depression difficult to treat. 
         If you're diagnosed with treatment resistant depression, your doctor might recommend some less conventional treatment options. Electroconvulsive therapy (ECT) is sometimes helpful in this situation.</p>`,
-        createdDate: 'Mon Nov 18 2021 12:07:20 ',
-        image: ''
+        createdDate: 'Mon Nov 18 2021 12:07:20 '
 
     },
     {
@@ -182,9 +179,50 @@ export const Article = [
         be designed to help you improve your skills in areas such as time management, other elements might include identifying employer-sponsored wellness resources you can tap into, clarifying what's expected of you, getting necessary resources or support from colleagues, enriching your job to include more challenging or meaningful tasks, or making changes to your physical 
         workspace to make it more comfortable and reduce strain.Get some support. Accepting help from trusted friends and family members can improve your ability to manage stress. Your employer may also have stress management resources available through an employee assistance program, including online information, available counseling, and referral to mental health professionals,
         if needed. If you continue to feel overwhelmed by work stress, you may want to talk to a psychologist, who can help you better manage stress and change unhealthy behavior.</p>`,
-        createdDate: 'Mon Nov 18 2021 12:07:20 ',
-        image: ''
+        createdDate: 'Mon Nov 18 2021 12:07:20 '
 
-    }
+    },
+    {
+        id: '5',
+        title: 'The 6 Major Theories of Emotion',
+        description: 'Emotions exert an incredibly powerful force on human behavior. Strong emotions can cause you to take actions you might not normally perform or to avoid situations you enjoy. Why exactly do we have emotions? What causes them? Researchers, philosophers, and psychologists have proposed various theories of emotion to explain the how and why behind our feelings.',
+        fullDescription: ` <h2>What Is Emotion?</h2>
+        <p>In psychology, emotion is often defined as a complex state of feeling that results in physical and psychological changes that influence thought and behavior. Emotionality is associated with a range of psychological phenomena, including temperament, personality, mood, and motivation. According to author David G. Myers, human emotion involves "...physiological arousal, expressive behaviors, and conscious experience."</p>
+        <h2>Types of Theories of Emotion</h2>
+        <p>The major theories of emotion can be grouped into three main categories:</p>
+        <ul>
+        <li> Physiological theories suggest that responses within the body are responsible for emotions.</li>
+        <li> Neurological theories propose that activity within the brain leads to emotional responses.</li>
+        <li> Cognitive theories argue that thoughts and other mental activity play an essential role in forming emotions.</li>
+        </ul>
+        <h2>Evolutionary Theory of Emotion</h2>
+        <p>Naturalist Charles Darwin proposed that emotions evolved because they were adaptive and allowed humans and animals to survive and reproduce. Feelings of love and affection lead people to seek mates and reproduce. Feelings of fear compel people to fight or flee the source of danger.</p>
+        <p>According to the evolutionary theory of emotion, our emotions exist because they serve an adaptive role. Emotions motivate people to respond quickly to stimuli in the environment, which helps improve the chances of success and survival.</p>
+        <p>Understanding the emotions of other people and animals also plays a crucial role in safety and survival. If you encounter a hissing, spitting, and clawing animal, chances are you will quickly realize that the animal is frightened or defensive and leave it alone. Being able to interpret correctly the emotional displays of other people and animals allows you to respond correctly and avoid danger.</p>
+        <h2>The James-Lange Theory of Emotion</h2>
+        <p>The James-Lange theory is one of the best-known examples of a physiological theory of emotion. Independently proposed by psychologist William James and physiologist Carl Lange, the James-Lange theory of emotion suggests that emotions occur as a result of physiological reactions to events.</p>
+        <p>According to the James-Lange theory of emotion, an external stimulus leads to a physiological reaction. Your emotional reaction depends upon how you interpret those physical reactions.</p>
+        <p>For example, suppose you are walking in the woods and see a grizzly bear. You begin to tremble, and your heart begins to race. The James-Lange theory proposes that you will conclude that you are frightened ("I am trembling. Therefore, I am afraid"). According to this theory of emotion, you are not trembling because you are frightened. Instead, you feel frightened because you are trembling.</p>
+        <h2>The Cannon-Bard Theory of Emotion</h2>
+        <p>Another well-known physiological theory is the Cannon-Bard theory of emotion. Walter Cannon disagreed with the James-Lange theory of emotion on several different grounds. First, he suggested, people can experience physiological reactions linked to emotions without actually feeling those emotions. For example, your heart might race because you have been exercising, not because you are afraid.
+        Cannon also suggested that emotional responses occur much too quickly to be simply products of physical states. When you encounter a danger in the environment, you will often feel afraid before you start to experience the physical symptoms associated with fear, such as shaking hands, rapid breathing, and a racing heart.</p>
+         <p>According to the Cannon-Bard theory of emotion, we feel emotions and experience physiological reactions such as sweating, trembling, and muscle tension simultaneously.</p>
+        <p>Cannon first proposed his theory in the 1920s, and his work was later expanded on by physiologist Philip Bard during the 1930s.
+        More specifically, the theory proposes that emotions result when the thalamus sends a message to the brain in response to a stimulus, resulting in a physiological reaction. At the same time, the brain also receives signals triggering the emotional experience. Cannon and Bard's theory suggests that the physical and psychological experience of emotion happen at the same time and that one does not cause the other.</p>
+        <h2>Schachter-Singer Theory</h2>
+        <p>Also known as the two-factor theory of emotion, the Schachter-Singer theory is an example of a cognitive theory of emotion. This theory suggests that the physiological arousal occurs first, and then the individual must identify the reason for this arousal to experience and label it as an emotion. A stimulus leads to a physiological response that is then cognitively interpreted and labeled, resulting in an emotion.
+        Schachter and Singer's theory draws on both the James-Lange theory and the Cannon-Bard theory. Like the James-Lange theory, the Schachter-Singer theory proposes that people infer emotions based on physiological responses. The critical factor is the situation and the cognitive interpretation that people use to label that emotion.</p>
+        <p>The Schachter-Singer theory is a cognitive theory of emotion that suggests our thoughts are responsible for emotions.</p>
+        <p>Like the Cannon-Bard theory, the Schachter-Singer theory also suggests that similar physiological responses can produce varying emotions. For example, if you experience a racing heart and sweating palms during an important exam, you will probably identify the emotion as anxiety. If you experience the same physical responses on a date, you might interpret those responses as love, affection, or arousal</p>
+        <h2>Cognitive Appraisal Theory</h2>
+        <p>According to appraisal theories of emotion, thinking must occur first before experiencing emotion. Richard Lazarus was a pioneer in this area of emotion, and this theory is often referred to as the Lazarus theory of emotion.</p>
+        <p>The cognitive appraisal theory asserts that your brain first appraises a situation, and the resulting response is an emotion.</p>
+        <p>According to this theory, the sequence of events first involves a stimulus, followed by thought, which then leads to the simultaneous experience of a physiological response and the emotion. For example, if you encounter a bear in the woods, you might immediately begin to think that you are in great danger. This then leads to the emotional experience of fear and the physical reactions associated with the fight-or-flight response.</p>
+        <h2>Facial-Feedback Theory of Emotion</h2>
+        <p>The facial-feedback theory of emotions suggests that facial expressions are connected to experiencing emotions. Charles Darwin and William James both noted early on that, sometimes, physiological responses often have a direct impact on emotion, rather than simply being a consequence of the emotion.</p>
+        <p>The facial-feedback theory suggests that emotions are directly tied to changes in facial muscles. For example, people who are forced to smile pleasantly at a social function will have a better time at the event than they would if they had frowned or carried a more neutral facial expression.</p>
+        `,
+        createdDate: 'Fri Jun 19 2020 18:17:30 '
+    }   
 
 ]

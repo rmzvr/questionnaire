@@ -1,8 +1,15 @@
-body{
+body {
     position: relative;
 }
+.container-body {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, #c1e9fc 100%);
+    position: relative;
+    z-index: 0;
+padding-bottom: 20px;
+}
 
-.info-container{
+.info-container {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -12,20 +19,19 @@ body{
     border-radius: 15px;
     background-color: rgba(64, 64, 64, 0.22);
 
-    h2{
+    h2 {
         font-size: 2em;
-    font-family: "Cormorant Garamond", serif;
-
+        font-family: "Cormorant Garamond", serif;
     }
 }
 
-.image-container{
+.image-container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 600px;
 
-    img{
+    img {
         width: 600px;
     }
 }

@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 
@@ -21,7 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CommonModule,
     CoreModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
     
   ],
   exports: [

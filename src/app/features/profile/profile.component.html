@@ -1,12 +1,33 @@
 <app-header></app-header>
 <div class="container-body">
-    <div class="image-container">
-        <img src="../../../assets/img/profile.png" alt="">
-        <input type="file">
+    <div class="profile-info-container">
+        <div class="image-container">
+            <img src={{profileImage}} alt="">
+        </div>
+        <div class="user-info-container">
+            <div class="user-info-item">
+                <h2>Name:</h2>
+                <h2>{{userName}}</h2>
+            </div>
+            <div class="user-info-item">
+                <h3>Birthday:</h3>
+                <h3>{{birthday}}</h3>
+            </div>
+            <div class="user-info-item">
+                <p>Country:</p>
+                <p>{{country}}</p>
+            </div>
+            <div class="user-info-item">
+                <p>Favourite Color:</p>
+                <p>{{favouriteColor}}</p>
+            </div>
+        </div>
     </div>
-    <div class="info-container">
+
+    <div class="setting-container">
         <h2>Profile</h2>
-       
+        <input type="file">
+
     </div>
 </div>
 

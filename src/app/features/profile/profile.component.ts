@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
+  @Input()
+  public profileImage:string = 'assets/img/profile.png'
+  @Input()
+  protected userName:string = ''
+  @Input()
+  protected birthday:string = '-'
+  @Input()
+  protected country:string = '-'
+  @Input()
+  protected favouriteColor:string = '-'
 
 }

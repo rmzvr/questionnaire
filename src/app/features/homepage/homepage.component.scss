@@ -1,35 +1,38 @@
-h2{
+*{
+    box-sizing: border-box;
+}
+
+h2 {
     font-family: "Cormorant Garamond", serif;
     font-size: 2em;
 }
 
-.go-testing-container{
+.go-testing-container {
     display: flex;
-    height: 100vh;
+    height: 100%;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.button-container{
+.button-container {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.image-comtainer{
+.image-comtainer {
     padding: 30px;
     flex: 2;
     align-items: center;
-
 }
 
-.home-image{
+.home-image {
     width: 100%;
     min-width: 500px;
 }
 
-.card-container{
+.card-container {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -39,22 +42,29 @@ h2{
     padding: 50px;
     border-radius: 15px;
     background-color: rgba(64, 64, 64, 0.22);
-
 }
 
-.specialist-container{
+.specialist-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.call-container{
+.call-container {
     display: flex;
     justify-content: flex-end;
 }
 
-app-call-menu{
+app-call-menu {
     position: fixed;
     bottom: 130px;
-    right: 20px;
+    right: 30px;
+}
+
+.container-body {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, #c1e9fc 100%);
+    position: relative;
+    z-index: 0;
+    padding-bottom: 20px;
 }

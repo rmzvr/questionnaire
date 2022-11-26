@@ -7,13 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class SpecialistCardComponent {
 @Input()
-name: string = ''
+public name: string = ''
 @Input()
-info: string = ''
+public info: string = ''
 @Input()
-image:string = ''
+public image:string = ''
 @Input()
-id:string = ''
+public id:string = ''
 
 
 }

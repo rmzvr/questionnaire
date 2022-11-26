@@ -11,7 +11,7 @@ export class ImCallFormComponent {
     public dialog: MatDialogRef<ImCallFormComponent>
   ) { }
 
-  close() {
+  protected close(): void {
     this.dialog.close()
   }
 

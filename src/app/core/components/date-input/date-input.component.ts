@@ -8,11 +8,12 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
   styleUrls: ['./date-input.component.scss']
 })
 export class DateInputComponent {
-  therapyDate: Date = new Date()
-  @Output() clickEmitter = new EventEmitter();
+  protected therapyDate: Date = new Date()
+  @Output()
+  protected clickEmitter = new EventEmitter();
 
-  
-  minDate: Date;
+
+  protected minDate: Date;
 
   constructor() {
     const currentDay = new Date().getDate()
@@ -28,8 +29,8 @@ export class DateInputComponent {
   };
 
 
-  public addEvent( event: MatDatepickerInputEvent<Date>):void {
-    if(!event.value){
+  public addEvent(event: MatDatepickerInputEvent<Date>): void {
+    if (!event.value) {
       return
     }
     this.therapyDate = event.value

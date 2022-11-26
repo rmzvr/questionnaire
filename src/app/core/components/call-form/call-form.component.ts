@@ -8,7 +8,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 })
 export class CallFormComponent implements OnInit {
 
-  phoneNumber: string = ''
+  public phoneNumber: string = ''
 
   constructor(
     public dialog: MatDialogRef<CallFormComponent>
@@ -18,14 +18,14 @@ export class CallFormComponent implements OnInit {
 
   }
 
-  add(phoneNumber: string) {
+  protected add(phoneNumber: string):void {
     this.phoneNumber = phoneNumber
     console.log(this.phoneNumber)
 
     this.close()
   }
 
-  close() {
+  protected close():void {
     this.dialog.close()
   }
 

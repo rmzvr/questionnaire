@@ -13,21 +13,21 @@ import { TherapyFormComponent } from '../therapy-form/therapy-form.component';
 export class CallMenuComponent {
 
   @Input()
-  specialists :Specialists[] = []
+  public specialists :Specialists[] = []
 
   constructor(
     public dialog: MatDialog
   ) { }
 
-  openCallDialog() {
+  protected openCallDialog() {
     this.dialog.open(CallFormComponent)
   }
 
-  openImCallDialog() {
+  protected openImCallDialog() {
     this.dialog.open(ImCallFormComponent)
   }
 
-  openTherapyDialog() {
+  protected openTherapyDialog() {
     this.dialog.open(TherapyFormComponent)
   }
 

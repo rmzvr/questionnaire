@@ -5,7 +5,9 @@
 </div>
 <div class="info-container">
     <div *ngFor="let item of articles ">
-        <app-article-card [title]="item.title" [description]="item.description"></app-article-card>
+        <app-article-card [title]="item.title" [description]="item.description"
+            (click)="openDialog(item.title, item.description,item.fullDescription,item.createdDate) ">
+        </app-article-card>
     </div>
 </div>
 <app-footer></app-footer>

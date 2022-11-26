@@ -10,4 +10,5 @@ export class ArticleCardComponent {
   title: string = ''
   @Input()
   description: string = ''
+
 }

@@ -1,0 +1,8 @@
+.mat-mdc-dialog-content {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    span {
+        align-self: flex-end;
+    }
+}

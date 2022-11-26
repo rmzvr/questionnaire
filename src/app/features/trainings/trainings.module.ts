@@ -5,6 +5,8 @@ import { TrainingsComponent } from './trainings.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
+import { ArticleDetailsComponent } from './components/article-details/article-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -12,12 +14,14 @@ import { ArticleCardComponent } from './components/article-card/article-card.com
 @NgModule({
   declarations: [
     TrainingsComponent,
-    ArticleCardComponent
+    ArticleCardComponent,
+    ArticleDetailsComponent
   ],
   imports: [
     CommonModule,
     CoreModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
     
   ],
   exports: [

@@ -3,15 +3,22 @@ import { CommonModule } from '@angular/common';
 import { CoreModule } from 'src/app/core/core.module';
 import { TrainingsComponent } from './trainings.component';
 
+import { MatCardModule } from '@angular/material/card';
+import { ArticleCardComponent } from './components/article-card/article-card.component';
+
+
 
 
 @NgModule({
   declarations: [
-    TrainingsComponent
+    TrainingsComponent,
+    ArticleCardComponent
   ],
   imports: [
     CommonModule,
-    CoreModule
+    CoreModule,
+    MatCardModule
+    
   ],
   exports: [
     TrainingsComponent

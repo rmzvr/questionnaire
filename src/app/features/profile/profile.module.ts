@@ -8,6 +8,10 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EmailPanelComponent } from './components/email-panel/email-panel.component';
 import { PasswordPanelComponent } from './components/password-panel/password-panel.component';
+import {MatIconModule} from '@angular/material/icon';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
+
 
 
 
@@ -17,15 +21,18 @@ import { PasswordPanelComponent } from './components/password-panel/password-pan
     ProfileComponent,
     ProfileCardComponent,
     EmailPanelComponent,
-    PasswordPanelComponent
+    PasswordPanelComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
+    BrowserModule,
     CommonModule,
     CoreModule,
     MatExpansionModule,
     MatInputModule,
     FormsModule,
-     ReactiveFormsModule
+     ReactiveFormsModule,
+     MatIconModule
   ],
   exports: [ProfileComponent]
 })

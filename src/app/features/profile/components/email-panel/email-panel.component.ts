@@ -9,7 +9,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 })
 export class EmailPanelComponent {
   @Input()
-  userEmail:string = ''
+  public userEmail:string = ''
 
   public panelOpenState: boolean = false
   public changeEmail: boolean = false
@@ -26,7 +26,7 @@ export class EmailPanelComponent {
 
   protected add(): void {
     if (!this.emailFormControl.value) {
-      throw new Error('Email error');
+      throw new Error('Change email failed');
     }
     this.changedEmail = this.emailFormControl.value
   }

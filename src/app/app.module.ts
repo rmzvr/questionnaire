@@ -8,6 +8,7 @@ import { HomepageModule } from './features/homepage/homepage.module';
 import { SignupModule } from './features/signup/signup.module';
 import { SigninModule } from './features/signin/signin.module';
 import { RestorePasswordModule } from './features/restore-password/restore-password.module';
+import { TrainingsModule } from './features/trainings/trainings.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,8 @@ import { RestorePasswordModule } from './features/restore-password/restore-passw
     HomepageModule,
     SignupModule,
     SigninModule,
-    RestorePasswordModule
+    RestorePasswordModule,
+    TrainingsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

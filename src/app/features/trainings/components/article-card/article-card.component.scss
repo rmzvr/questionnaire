@@ -1,0 +1,66 @@
+$accent-color: #1a3088;
+$accent-color-2:#98cbf8;
+$basic-color: #c1e9fc;
+
+*{
+    font-family: 'Cormorant Garamond', serif;
+    box-sizing: border-box;
+}
+mat-card{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    &::before ,
+    &::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        border: 2px solid $accent-color-2;
+        transition: all 0.25s ease-out;
+    }
+    &::before {
+        background-color: $accent-color-2;
+        top: -9px;
+        left: -9px;
+        border-radius: 5px;
+    }
+
+    &::after {
+        border: 2px solid #ff00aa;
+        top: 9px;
+        left: 9px;
+    }
+    
+    &:hover {
+        &::before {
+            top: 7px;
+            left: 7px;
+        }
+        &::after{
+            top: -7px;
+            left: -7px;
+        }
+    }
+
+    &:hover span{
+        color: #ff00aa;
+    }
+}
+
+mat-card-title{
+    color: $accent-color;
+}
+
+mat-card-content{
+    text-align: justify;
+    padding: 0 40px;
+}
+
+.tap-span{
+    padding: 20px 0;
+    color: $accent-color;
+}

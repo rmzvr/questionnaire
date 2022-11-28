@@ -11,13 +11,7 @@ export class PasswordPanelComponent implements OnInit {
 
   @Input()
   public userPas: string = ''
-
-
-
-
-
   public panelOpenState: boolean = false
-
   public changePas: boolean = false
   public hide = true;
   public changePasForm!: FormGroup;

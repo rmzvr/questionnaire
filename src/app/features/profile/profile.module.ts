@@ -11,8 +11,10 @@ import { PasswordPanelComponent } from './components/password-panel/password-pan
 import { MatIconModule } from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { AvatarPanelComponent } from './components/avatar-panel/avatar-panel.component';
-
+import { AdditionalPanelComponent } from './components/additional-panel/additional-panel.component';
 @NgModule({
   declarations: [
     ProfileComponent,
@@ -20,6 +22,7 @@ import { AvatarPanelComponent } from './components/avatar-panel/avatar-panel.com
     EmailPanelComponent,
     PasswordPanelComponent,
     AvatarPanelComponent,
+    AdditionalPanelComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +33,9 @@ import { AvatarPanelComponent } from './components/avatar-panel/avatar-panel.com
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [ProfileComponent]
 })

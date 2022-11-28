@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/core/models/user.model';
 import { UserDate } from './mock-data/userInfo';
 
@@ -9,7 +9,7 @@ import { UserDate } from './mock-data/userInfo';
 })
 
 
-export class ProfileComponent {
+export class ProfileComponent implements OnInit{
   @Input()
   public profileImage: string = 'assets/img/profile.png'
   @Input()
@@ -25,4 +25,7 @@ export class ProfileComponent {
 
   constructor() { }
 
+
+  ngOnInit(): void {
+  }
 }

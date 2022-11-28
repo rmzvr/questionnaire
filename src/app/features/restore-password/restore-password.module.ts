@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RestoreComponent } from './restore.component';
+import { RestorePasswordComponent } from './restore-password.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,10 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
-
-
 @NgModule({
-  declarations: [RestoreComponent],
+  declarations: [RestorePasswordComponent],
   imports: [
     CommonModule,
     CoreModule,
@@ -26,4 +24,4 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
   ],
 })
-export class RestoreModule {}
+export class RestorePasswordModule {}

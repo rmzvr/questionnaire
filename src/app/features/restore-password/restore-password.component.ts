@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-restore',
-  templateUrl: './restore.component.html',
-  styleUrls: ['./restore.component.scss'],
+  selector: 'app-restore-password',
+  templateUrl: './restore-password.component.html',
+  styleUrls: ['./restore-password.component.scss'],
 })
-export class RestoreComponent {
+export class RestorePasswordComponent {
   public restoreForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
@@ -23,15 +18,11 @@ export class RestoreComponent {
   }
 
   public get email(): FormControl {
-    return this.restoreForm.get('email') as FormControl
+    return this.restoreForm.get('email') as FormControl;
   }
 
   public submit(event: Event): void {
     event.preventDefault();
-
-    if (this.restoreForm.invalid) {
-      return;
-    }
 
     //! Restore password
   }

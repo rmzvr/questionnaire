@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageModule } from './features/homepage/homepage.module';
 import { SignupModule } from './features/signup/signup.module';
 import { SigninModule } from './features/signin/signin.module';
-import { RestoreModule } from './features/restore/restore.module';
+import { RestorePasswordModule } from './features/restore-password/restore-password.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +18,7 @@ import { RestoreModule } from './features/restore/restore.module';
     HomepageModule,
     SignupModule,
     SigninModule,
-    RestoreModule
+    RestorePasswordModule
   ],
   providers: [],
   bootstrap: [AppComponent],

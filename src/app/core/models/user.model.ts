@@ -6,6 +6,5 @@ export interface User {
     password: string,
     birthday: string,
     gender: string,
-    country: string,
-    favouriteColor: string
+    country: string
 }

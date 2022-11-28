@@ -6,6 +6,5 @@ export const UserDate = {
     password: 'myPassword123^',
     birthday: '01.01.01',
     gender: 'Male',
-    country: 'myCountry',
-    favouriteColor: 'red',
+    country: 'myCountry'
 }

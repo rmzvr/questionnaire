@@ -18,24 +18,19 @@
                     <p>Country:</p>
                     <p>{{country}}</p>
                 </div>
-                <div class="user-info-item">
-                    <p>Favourite Color:</p>
-                    <p>{{favouriteColor}}</p>
-                </div>
             </div>
         </div>
     </div>
 
     <div class="setting-container">
         <h2>Profile</h2>
-        <input type="file">
+        <app-avatar-panel class="panel"></app-avatar-panel>
+        <app-email-panel class="panel" [userEmail]="user.email"></app-email-panel>
+        <app-password-panel class="panel" [userPas]="user.password"></app-password-panel>
 
-            <app-email-panel class="panel" [userEmail]="user.email"></app-email-panel>
-            <app-password-panel class="panel" [userPas]="user.password"></app-password-panel>
 
-       
     </div>
-   
+
 </div>
 
 <app-footer></app-footer>

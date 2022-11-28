@@ -1,6 +1,5 @@
 $accent-color: #1a3088;
 
-
 * {
     box-sizing: border-box;
 }
@@ -62,20 +61,25 @@ body {
         justify-content: center;
         flex: 1;
 
-        .user-info{
+        .user-info {
             display: flex;
             flex-direction: column;
             padding: 20px;
 
             .user-info-item {
                 display: flex;
-    
-                &:first-of-type h2,h3,p{
+
+                &:first-of-type h2,
+                h3,
+                p {
                     color: $accent-color;
                     margin-right: 20px;
                 }
             }
         }
-
     }
+}
+
+.panel {
+    margin-bottom: 10px;
 }

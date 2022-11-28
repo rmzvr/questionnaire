@@ -11,3 +11,17 @@ mat-expansion-panel{
         justify-content: space-around;
     }
 }
+
+form{
+    display: flex;
+    align-self: center;
+}
+
+.button{
+    align-self: center;
+    padding: 5px 10px;
+    width: 45px;
+    margin: 0 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    }

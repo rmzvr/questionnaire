@@ -3,18 +3,15 @@ import { CommonModule } from '@angular/common';
 import { CoreModule } from 'src/app/core/core.module';
 import { ProfileComponent } from './profile.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatInputModule} from '@angular/material/input';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailPanelComponent } from './components/email-panel/email-panel.component';
 import { PasswordPanelComponent } from './components/password-panel/password-panel.component';
-import {MatIconModule} from '@angular/material/icon';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {BrowserModule} from '@angular/platform-browser';
-
-
-
-
+import { MatIconModule } from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import { AvatarPanelComponent } from './components/avatar-panel/avatar-panel.component';
 
 @NgModule({
   declarations: [
@@ -22,17 +19,18 @@ import {BrowserModule} from '@angular/platform-browser';
     ProfileCardComponent,
     EmailPanelComponent,
     PasswordPanelComponent,
+    AvatarPanelComponent,
   ],
   imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
     CommonModule,
     CoreModule,
+    MatFormFieldModule,
     MatExpansionModule,
     MatInputModule,
     FormsModule,
-     ReactiveFormsModule,
-     MatIconModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [ProfileComponent]
 })

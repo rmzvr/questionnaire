@@ -7,6 +7,8 @@ import { UserDate } from './mock-data/userInfo';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
+
+
 export class ProfileComponent {
   @Input()
   public profileImage: string = 'assets/img/profile.png'
@@ -22,6 +24,5 @@ export class ProfileComponent {
   protected  user: User = UserDate
 
   constructor() { }
-
 
 }

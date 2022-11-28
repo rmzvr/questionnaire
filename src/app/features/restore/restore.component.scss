@@ -23,18 +23,17 @@ $basic-color: #C1E9FC;
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
 
   min-height: 100vh;
   align-content: center;
-  gap: 5rem;
+  gap: 1rem;
 }
 
 img {
-  justify-self: flex-start;
+  justify-self: center;
 }
 
-.example-container mat-form-field+mat-form-field {
+.example-container mat-form-field + mat-form-field {
   margin-left: 8px;
 }
 
@@ -48,23 +47,15 @@ input.example-right-align::-webkit-inner-spin-button {
 }
 
 .form {
-  width: 30rem;
+  width: 26rem;
   height: fit-content;
 
   display: grid;
   justify-self: center;
   align-self: center;
   gap: 0.4rem;
-
-  margin-top: 2rem;
-  margin-left: 4rem;
 }
 
 mat-hint {
   justify-self: flex-end;
-}
-
-.reset {
-  text-align: right;
-  text-decoration: none;
 }

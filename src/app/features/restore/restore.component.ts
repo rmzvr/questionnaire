@@ -22,8 +22,8 @@ export class RestoreComponent {
     });
   }
 
-  public get email(): any {
-    return this.restoreForm.get('email');
+  public get email(): FormControl {
+    return this.restoreForm.get('email') as FormControl
   }
 
   public submit(event: Event): void {

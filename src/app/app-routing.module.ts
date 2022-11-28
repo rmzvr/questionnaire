@@ -9,14 +9,21 @@ const routes: Routes = [
   { path: 'login', component: SigninComponent },
   { path: 'register', component: SignupComponent },
   {
-    path: 'questionnaire',
+    path: 'questionnaires',
+    loadChildren: () =>
+      import('./features/questionnaires/questionnaires.module').then(
+        (module) => module.QuestionnairesModule
+      ),
+  },
+  {
+    path: 'questionnaires/:name',
     loadChildren: () =>
       import('./features/questionnaire/questionnaire.module').then(
         (module) => module.QuestionnaireModule
       ),
   },
   {
-    path: 'result',
+    path: 'questionnaires/:name/result',
     loadChildren: () =>
       import('./features/result/result.module').then(
         (module) => module.ResultModule

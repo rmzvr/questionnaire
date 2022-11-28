@@ -30,6 +30,6 @@
 </ng-template>
 
 <ng-template #buttonFinish>
-  <button routerLink="/result" class="" mat-flat-button color="primary"
+  <button class="" mat-flat-button color="primary" (click)="navigateToResultPage()"
     [disabled]="selectedOption === null">Finish</button>
 </ng-template>

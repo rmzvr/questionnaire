@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuestionsService } from '../../services/questions.service';
 
 @Component({
@@ -10,8 +11,12 @@ export class FormExtendedComponent {
   @Input() public questions: any;
 
   public currentQuestionIndex: number = 0;
+  public name: string = '';
 
-  constructor(private questionsService: QuestionsService) {}
+  constructor(
+    private questionsService: QuestionsService,
+    private router: Router
+  ) {}
 
   public get progress(): number {
     return (this.currentQuestionIndex / (this.questions.length - 1)) * 100;
@@ -59,5 +64,9 @@ export class FormExtendedComponent {
     this.questionsService.increaseScore(this.selectedOption.value);
 
     this.previousSelectedOption = this.selectedOption;
+  }
+
+  public navigateToResultPage(): void {
+    this.router.navigate([this.router.url + '/result']);
   }
 }

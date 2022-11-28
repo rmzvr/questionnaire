@@ -31,15 +31,25 @@ export class SignupComponent {
     });
   }
 
-  public get name(): any {
-    return this.registerForm.get('name');
+  public get name(): FormControl {
+    return this.registerForm.get('name') as FormControl
   }
 
-  public get email(): any {
-    return this.registerForm.get('email');
+  public get email(): FormControl {
+    return this.registerForm.get('email') as FormControl
   }
 
-  public get password(): any {
-    return this.registerForm.get('password');
+  public get password(): FormControl {
+    return this.registerForm.get('password') as FormControl
+  }
+
+  public submit(event: Event): void {
+    event.preventDefault();
+
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    //! Register user
   }
 }

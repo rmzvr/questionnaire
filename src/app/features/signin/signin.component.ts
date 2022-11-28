@@ -30,11 +30,21 @@ export class SigninComponent implements OnInit {
     });
   }
 
-  public get email(): any {
-    return this.loginForm.get('email');
+  public get email(): FormControl {
+    return this.loginForm.get('email') as FormControl
   }
 
-  public get password(): any {
-    return this.loginForm.get('password');
+  public get password(): FormControl {
+    return this.loginForm.get('password') as FormControl
+  }
+
+  public submit(event: Event): void {
+    event.preventDefault();
+
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    //! Login user
   }
 }

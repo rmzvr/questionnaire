@@ -32,23 +32,19 @@ export class SignupComponent {
   }
 
   public get name(): FormControl {
-    return this.registerForm.get('name') as FormControl
+    return this.registerForm.get('name') as FormControl;
   }
 
   public get email(): FormControl {
-    return this.registerForm.get('email') as FormControl
+    return this.registerForm.get('email') as FormControl;
   }
 
   public get password(): FormControl {
-    return this.registerForm.get('password') as FormControl
+    return this.registerForm.get('password') as FormControl;
   }
 
   public submit(event: Event): void {
     event.preventDefault();
-
-    if (this.registerForm.invalid) {
-      return;
-    }
 
     //! Register user
   }

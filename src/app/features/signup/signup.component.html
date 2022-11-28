@@ -43,7 +43,8 @@
       <mat-error *ngIf="password.invalid && password.errors?.['required']">The password field is
         required</mat-error>
 
-      <mat-error *ngIf="password.invalid && password.errors?.['minlength']">The password should be at
+      <mat-error *ngIf="password.invalid && !password.errors?.['minlength'] && password.errors?.['minlength']">The
+        password should be at
         least 6
         characters</mat-error>
 
@@ -57,7 +58,7 @@
       </mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Sign Up</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Sign Up</button>
   </form>
 
 </div>

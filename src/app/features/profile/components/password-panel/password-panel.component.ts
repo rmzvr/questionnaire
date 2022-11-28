@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 @Component({
@@ -7,34 +7,48 @@ import { ErrorStateMatcher } from '@angular/material/core';
   templateUrl: './password-panel.component.html',
   styleUrls: ['./password-panel.component.scss']
 })
-export class PasswordPanelComponent {
+export class PasswordPanelComponent implements OnInit {
+
   @Input()
   public userPas: string = ''
 
-  public currentPass: string = ''
-  public newPass: string = ''
-  public confirmPass: string = ''
+
+
+
 
   public panelOpenState: boolean = false
 
   public changePas: boolean = false
   public hide = true;
+  public changePasForm!: FormGroup;
+  public validator: Array<ValidatorFn> = [
+    Validators.required,
+    Validators.minLength(6),
+    Validators.maxLength(24),
+    Validators.pattern(/(?=.*\d)(?=.*[A-Z])((?=.*\W)|(?=.*_))^[^ ]+$/)
+  ]
 
-  protected curPasFormControl = new FormControl('', [Validators.required,]);
-  protected newPasFormControl = new FormControl('', [Validators.required,]);
-  protected confirmPasFormControl = new FormControl('', [Validators.required,]);
+  constructor(private formBuilder: FormBuilder) { }
 
-  protected matcher = new ErrorStateMatcher();
+  ngOnInit(): void {
+    this.changePasForm = this.formBuilder.group({
+      currentPass: new FormControl('', this.validator),
+      newPass: new FormControl('', this.validator),
+      confirmPass: new FormControl('', this.validator),
+    });
+  }
 
+  public get currentPass(): FormControl {
+    return this.changePasForm.get('currentPass') as FormControl
+  }
+  public get newPass(): FormControl {
+    return this.changePasForm.get('newPass') as FormControl
+  }
+  public get confirmPass(): FormControl {
+    return this.changePasForm.get('confirmPass') as FormControl
+  }
 
-  protected add():void {
-
-    if (!this.curPasFormControl.value || !this.newPasFormControl.value || !this.confirmPasFormControl.value) {
-      throw new Error('Change password failed');
-
-    }
-    this.currentPass = this.curPasFormControl.value
-    this.newPass = this.newPasFormControl.value
-    this.confirmPass = this.confirmPasFormControl.value
+  protected add(): void {
+    
   }
 }

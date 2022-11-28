@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SignupComponent } from './signup.component';
+import { RestorePasswordComponent } from './restore-password.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [SignupComponent],
+  declarations: [RestorePasswordComponent],
   imports: [
     CommonModule,
     CoreModule,
@@ -23,6 +23,5 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatIconModule,
   ],
-  exports: [SignupComponent],
 })
-export class SignupModule {}
+export class RestorePasswordModule {}

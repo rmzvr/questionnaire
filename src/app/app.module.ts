@@ -5,15 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageModule } from './features/homepage/homepage.module';
-import { SignupComponent } from './features/signup/signup.component';
+import { SignupModule } from './features/signup/signup.module';
+import { SigninModule } from './features/signin/signin.module';
+import { RestorePasswordModule } from './features/restore-password/restore-password.module';
 
 @NgModule({
-  declarations: [AppComponent, SignupComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HomepageModule,
+    SignupModule,
+    SigninModule,
+    RestorePasswordModule
   ],
   providers: [],
   bootstrap: [AppComponent],

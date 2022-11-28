@@ -39,13 +39,13 @@
         maximum 24 characters
       </mat-error>
 
-      <mat-error *ngIf=" password.invalid && password.errors?.['pattern']">Must have at least one
-        uppercase letter, number
-        and special symbol
+      <mat-error *ngIf="password.invalid
+      && !password.errors?.['minlength']
+      && password.errors?.['pattern']">Must have at least one uppercase letter, number and special symbol
       </mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Sign In</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Sign In</button>
 
     <a routerLink="/restore" class="reset">Forgot password?</a>
   </form>

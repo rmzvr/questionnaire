@@ -41,10 +41,6 @@ export class SigninComponent implements OnInit {
   public submit(event: Event): void {
     event.preventDefault();
 
-    if (this.loginForm.invalid) {
-      return;
-    }
-
     //! Login user
   }
 }

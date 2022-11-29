@@ -1,3 +1,6 @@
+import { ResultComponent } from './features/result/result.component';
+import { QuestionnaireComponent } from './features/questionnaire/questionnaire.component';
+import { QuestionnairesComponent } from './features/questionnaires/questionnaires.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './features/homepage/homepage.component';
@@ -9,39 +12,30 @@ import { TrainingsComponent } from './features/trainings/trainings.component';
 
 const routes: Routes = [
   {
-    path: '', component: HomepageComponent
+    path: '',
+    component: HomepageComponent,
   },
   { path: 'login', component: SigninComponent },
   { path: 'register', component: SignupComponent },
   { path: 'restore', component: RestorePasswordComponent },
   {
     path: 'questionnaires',
-    loadChildren: () =>
-      import('./features/questionnaires/questionnaires.module').then(
-        (module) => module.QuestionnairesModule
-      ),
+    component: QuestionnairesComponent,
   },
   { path: 'profile', component: ProfileComponent },
   {
     path: 'questionnaires/:name',
-    loadChildren: () =>
-      import('./features/questionnaire/questionnaire.module').then(
-        (module) => module.QuestionnaireModule
-      ),
+    component: QuestionnaireComponent,
   },
   {
     path: 'questionnaires/:name/result',
-    loadChildren: () =>
-      import('./features/result/result.module').then(
-        (module) => module.ResultModule
-      ),
+    component: ResultComponent,
   },
   { path: 'trainings', component: TrainingsComponent },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

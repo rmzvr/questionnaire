@@ -15,10 +15,7 @@ constructor(
 
 ){}
 
-ngOnInit(){
-  console.log(this.context);
-  
-  
+ngOnInit(){  
 }
 
 }

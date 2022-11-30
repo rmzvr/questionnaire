@@ -1,3 +1,6 @@
+import { ResultModule } from './features/result/result.module';
+import { QuestionnaireModule } from './features/questionnaire/questionnaire.module';
+import { QuestionnairesModule } from './features/questionnaires/questionnaires.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -22,7 +25,10 @@ import { ProfileModule } from './features/profile/profile.module';
     SigninModule,
     RestorePasswordModule,
     TrainingsModule,
-    ProfileModule
+    ProfileModule,
+    QuestionnairesModule,
+    QuestionnaireModule,
+    ResultModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

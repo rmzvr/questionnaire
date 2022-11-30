@@ -1,6 +1,10 @@
+import { EmailDialogComponent } from './components/email-dialog/email-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuestionsService } from '../questionnaire/services/questions.service';
+import { MatDialog } from '@angular/material/dialog';
+import { RegisterDialogComponent } from './components/register-dialog/register-dialog.component';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-result',
@@ -12,7 +16,8 @@ export class ResultComponent implements OnInit {
 
   constructor(
     private questionsService: QuestionsService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -21,5 +26,35 @@ export class ResultComponent implements OnInit {
 
   public navitageToQuestionnairePage(): void {
     this.router.navigate([this.router.url.slice(0, -6)]);
+  }
+
+  public openEmailDialog(): void {
+    const dialogRef = this.dialog.open(EmailDialogComponent, {
+      width: '470px',
+    });
+
+    dialogRef
+      .afterClosed()
+      .pipe(take(1))
+      .subscribe((result) => {
+        sessionStorage.setItem('email', result);
+
+        this.openRegisterDialog();
+      });
+  }
+
+  public openRegisterDialog(): void {
+    const dialogRef = this.dialog.open(RegisterDialogComponent, {
+      width: '470px',
+    });
+
+    dialogRef
+      .afterClosed()
+      .pipe(take(1))
+      .subscribe((result) => {
+        sessionStorage.setItem('password', result);
+
+        this.router.navigate(['/profile'])
+      });
   }
 }

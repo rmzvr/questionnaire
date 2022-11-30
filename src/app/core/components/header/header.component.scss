@@ -19,3 +19,12 @@ $basic-color: #C1E9FC;
     font-family: "Cormorant Garamond", serif;
   }
 }
+
+.link-menu{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.page-link{
+  font-size: 1em;
+}

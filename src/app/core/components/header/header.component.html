@@ -1,6 +1,13 @@
 <mat-toolbar>
   <span>Application</span>
+  <div class="link-menu">
+  <a routerLink="/" class="page-link" mat-button color="primary" *ngIf="context !== 'homepage'">Home page</a>
+  <a routerLink="/profile" class="page-link" mat-button color="primary" *ngIf="context !== 'profile'">Profile</a>
+  <a routerLink="/trainings" class="page-link" mat-button color="primary" *ngIf="context !== 'trainings'">Trainings</a>
+
+</div>
   <span class="example-spacer"></span>
+
   <a routerLink="/login" class="button-signin" mat-raised-button color="primary">Sign in</a>
   <a routerLink="/register" class="button-signup" mat-raised-button>Sign up</a>
 </mat-toolbar>

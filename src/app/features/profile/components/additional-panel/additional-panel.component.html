@@ -9,6 +9,14 @@
 
             <form class="form">
                 <mat-form-field>
+                  <mat-select required>
+                    <mat-option value="male">Male</mat-option>
+                    <mat-option value="female">Female</mat-option>
+                  </mat-select>
+                  <mat-label>Choose Your Gender:</mat-label>
+
+                </mat-form-field>
+                <mat-form-field>
                     <mat-label>Enter Your Country:</mat-label>
                     <input type="country" matInput [formControl]="countryFormControl">
                 </mat-form-field>

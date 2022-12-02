@@ -16,6 +16,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AvatarPanelComponent } from './components/avatar-panel/avatar-panel.component';
 import { AdditionalPanelComponent } from './components/additional-panel/additional-panel.component';
 import { NgxMatFileInputModule } from '@angular-material-components/file-input';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { NgxMatFileInputModule } from '@angular-material-components/file-input';
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgxMatFileInputModule
+    NgxMatFileInputModule,
+    MatSelectModule
   ],
   exports: [ProfileComponent]
 })

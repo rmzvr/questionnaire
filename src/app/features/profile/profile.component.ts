@@ -9,7 +9,7 @@ import { UserDate } from './mock-data/userInfo';
 })
 
 
-export class ProfileComponent implements OnInit{
+export class ProfileComponent implements OnInit {
   @Input()
   public profileImage: string = 'assets/img/profile.png'
   @Input()
@@ -20,12 +20,13 @@ export class ProfileComponent implements OnInit{
   protected country: string = '-'
   @Input()
   protected favouriteColor: string = '-'
-  
-  protected  user: User = UserDate
+
+  protected user: User = UserDate
 
   constructor() { }
 
 
   ngOnInit(): void {
   }
+
 }

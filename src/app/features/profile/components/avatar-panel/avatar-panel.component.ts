@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './avatar-panel.component.html',
   styleUrls: ['./avatar-panel.component.scss']
 })
-export class AvatarPanelComponent {
+export class AvatarPanelComponent implements OnInit {
 
   public panelOpenState: boolean = false
   public avatar: string = ''
@@ -14,6 +14,9 @@ export class AvatarPanelComponent {
 
   protected avatarFormControl = new FormControl();
 
+  ngOnInit() {
+
+  }
 
   protected add(): void {
     if (!this.avatarFormControl.value) {
@@ -21,4 +24,6 @@ export class AvatarPanelComponent {
     }
     this.avatar = this.avatarFormControl.value
   }
+
+
 }

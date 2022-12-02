@@ -8,15 +8,15 @@
         <div class="info-item-container">
             <div class="info-item">
                 <button (click)="changeAvatar = !changeAvatar" mat-raised-button>Change avatar</button>
-                <button  mat-raised-button>Remove avatar</button>
+                <button mat-raised-button>Remove avatar</button>
 
             </div>
             <form class="form" *ngIf="changeAvatar">
-                <mat-form-field>
-                    <mat-label>Change avatar:</mat-label>
-                    <input type="file" matInput [formControl]="avatarFormControl">
+                <mat-form-field appearance="fill">
+
+                    <ngx-mat-file-input [formControl]="avatarFormControl" (change)="add()"></ngx-mat-file-input>
+
                 </mat-form-field>
-                <button class="save-button button" id="save" (click)="add()">&#10003;</button>
             </form>
         </div>
     </mat-expansion-panel>

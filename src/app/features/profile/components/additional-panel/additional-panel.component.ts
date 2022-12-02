@@ -6,19 +6,19 @@ import { FormControl } from '@angular/forms';
   templateUrl: './additional-panel.component.html',
   styleUrls: ['./additional-panel.component.scss']
 })
-export class AdditionalPanelComponent  implements OnInit{
+export class AdditionalPanelComponent implements OnInit {
   public isBirthdaySet: boolean = false
   public panelOpenState: boolean = false
 
   protected countryFormControl = new FormControl();
   protected BirthdayFormControl = new FormControl();
 
-ngOnInit(){
+  ngOnInit() {
 
-    
-}
 
-  protected add():void { }
+  }
+
+  protected add(): void { }
 
   onCountrySelected($event: any) {
 

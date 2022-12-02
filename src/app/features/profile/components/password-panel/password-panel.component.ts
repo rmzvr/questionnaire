@@ -30,6 +30,7 @@ export class PasswordPanelComponent implements OnInit {
       newPass: new FormControl('', this.validator),
       confirmPass: new FormControl('', this.validator),
     });
+
   }
 
   public get currentPass(): FormControl {
@@ -43,6 +44,10 @@ export class PasswordPanelComponent implements OnInit {
   }
 
   protected add(): void {
-    
+  }
+
+  protected closePanel(): void {
+    this.panelOpenState = false;
+    this.changePas = false
   }
 }

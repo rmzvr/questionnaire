@@ -30,4 +30,9 @@ export class EmailPanelComponent {
     }
     this.changedEmail = this.emailFormControl.value
   }
+
+  protected closePanel(): void {
+    this.panelOpenState = false;
+    this.changeEmail = false
+  }
 }

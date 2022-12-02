@@ -16,13 +16,11 @@
                     <mat-label>Choose Your Gender:</mat-label>
                 </mat-form-field>
 
-
                 <div>
-                    <mat-select-country [formControl]="countryFormControl" (onCountrySelected)="onCountrySelected($event)"></mat-select-country>
+                    <mat-select-country label="Country" [formControl]="countryFormControl"
+                        (onCountrySelected)="onCountrySelected($event)"></mat-select-country>
 
                 </div>
-                <!-- <input type="country" matInput [formControl]="countryFormControl"> -->
-
                 <mat-form-field *ngIf="!isBirthdaySet">
                     <mat-label>Enter Your Birthday:</mat-label>
                     <input matInput [formControl]="BirthdayFormControl" [matDatepicker]="picker">

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Country } from '@angular-material-extensions/select-country';
 
 @Component({
   selector: 'app-additional-panel',
@@ -14,13 +15,11 @@ export class AdditionalPanelComponent implements OnInit {
   protected BirthdayFormControl = new FormControl();
 
   ngOnInit() {
-
-
   }
 
   protected add(): void { }
 
-  onCountrySelected($event: any) {
+  onCountrySelected(country: Country) {
 
   }
 }

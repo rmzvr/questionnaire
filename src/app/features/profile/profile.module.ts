@@ -33,6 +33,7 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     CoreModule,
     MatFormFieldModule,
     MatExpansionModule,
@@ -46,7 +47,6 @@ import {HttpClientModule} from '@angular/common/http';
     NgxMatFileInputModule,
     MatSelectModule,
     MatSelectCountryModule.forRoot('de'),
-    HttpClientModule
   ],
   exports: [ProfileComponent]
 })

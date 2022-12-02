@@ -29,4 +29,8 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public addItem(removeAvatar: string): void {
+    this.profileImage = removeAvatar;
+  }
+
 }

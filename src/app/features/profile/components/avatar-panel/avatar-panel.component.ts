@@ -8,6 +8,8 @@ import { FormControl } from '@angular/forms';
 })
 export class AvatarPanelComponent implements OnInit {
 
+  @Output() removeAvatar = new EventEmitter<string>()
+
   public panelOpenState: boolean = false
   public avatar: string = ''
   public changeAvatar: boolean = false
@@ -25,5 +27,7 @@ export class AvatarPanelComponent implements OnInit {
     this.avatar = this.avatarFormControl.value
   }
 
-
+  protected remove(): void {
+    this.removeAvatar.emit('assets/img/profile.png');
+  }
 }

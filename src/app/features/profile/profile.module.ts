@@ -17,6 +17,9 @@ import { AvatarPanelComponent } from './components/avatar-panel/avatar-panel.com
 import { AdditionalPanelComponent } from './components/additional-panel/additional-panel.component';
 import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import {MatSelectModule} from '@angular/material/select';
+import { MatSelectCountryModule } from "@angular-material-extensions/select-country";
+import {HttpClientModule} from '@angular/common/http';
+
 
 
 @NgModule({
@@ -41,7 +44,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatDatepickerModule,
     MatNativeDateModule,
     NgxMatFileInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSelectCountryModule.forRoot('de'),
+    HttpClientModule
   ],
   exports: [ProfileComponent]
 })

@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 mat-expansion-panel{
     width: 40vw;
 }
@@ -15,7 +19,17 @@ mat-expansion-panel{
 form{
     display: flex;
     align-self: center;
+
+    mat-form-field{
+        font-size: 1em;
+        margin-top: 15px;
+
+        ngx-mat-file-input{
+            justify-content: center;
+        }
+    }
 }
+
 
 .button{
     align-self: center;

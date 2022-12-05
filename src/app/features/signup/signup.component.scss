@@ -33,7 +33,7 @@ $basic-color: #C1E9FC;
 
 .container {
   display: grid;
-  grid-template-columns: 5fr 6fr;
+  grid-template-columns: 3fr 2fr;
 
   min-height: 100vh;
   align-content: center;
@@ -41,7 +41,9 @@ $basic-color: #C1E9FC;
 }
 
 img {
-  justify-self: flex-end;
+  max-width: 100%;
+  justify-self: right;
+  align-self: center;
 }
 
 .example-container mat-form-field+mat-form-field {
@@ -58,19 +60,21 @@ input.example-right-align::-webkit-inner-spin-button {
 }
 
 .form {
-  width: 30rem;
+  width: 85%;
+  max-width: 30rem;
   height: fit-content;
 
   display: grid;
-  justify-self: center;
+  justify-self: left;
   align-self: center;
   gap: 0.4rem;
-
-  margin-top: 2rem;
-  margin-right: 4rem;
-
 }
 
 mat-hint {
   justify-self: flex-end;
+}
+
+.homepage-link {
+  text-decoration: none;
+  color: black;
 }

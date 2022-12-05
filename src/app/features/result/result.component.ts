@@ -1,7 +1,6 @@
 import { EmailDialogComponent } from './components/email-dialog/email-dialog.component';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuestionsService } from '../questionnaire/services/questions.service';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterDialogComponent } from './components/register-dialog/register-dialog.component';
 import { take } from 'rxjs';
@@ -11,18 +10,8 @@ import { take } from 'rxjs';
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss'],
 })
-export class ResultComponent implements OnInit {
-  public score$: any;
-
-  constructor(
-    private questionsService: QuestionsService,
-    private router: Router,
-    private dialog: MatDialog
-  ) {}
-
-  ngOnInit(): void {
-    this.score$ = this.questionsService.getScore();
-  }
+export class ResultComponent {
+  constructor(private router: Router, private dialog: MatDialog) {}
 
   public navitageToQuestionnairePage(): void {
     this.router.navigate([this.router.url.slice(0, -6)]);
@@ -54,7 +43,7 @@ export class ResultComponent implements OnInit {
       .subscribe((result) => {
         sessionStorage.setItem('password', result);
 
-        this.router.navigate(['/profile'])
+        this.router.navigate(['/profile']);
       });
   }
 }

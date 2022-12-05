@@ -3,17 +3,17 @@
   </mat-progress-bar>
 
   <p class="question">
-    {{ currentQuestion.questionText }}
+    {{ currentQuestion.name }}
   </p>
 
-  <ul class="options">
-    <li class="option" *ngFor="let option of currentQuestion.options"
-      [class.selected]="selectedOption?.id === option.id" (click)="answer(option)">
-      {{ option.text }}
+  <ul class="answers">
+    <li class="answer" *ngFor="let answer of currentQuestion.answers"
+      [class.selected]="selectedAnswer && selectedAnswer.id === answer.id" (click)="selectAnswer(answer)">
+      {{ answer.name }}
     </li>
   </ul>
 
-  <nav class="nav">
+  <nav class=" nav">
     <button mat-icon-button [disabled]="!currentQuestionIndex" (click)="previousQuestion()">
       <mat-icon>arrow_back_ios_new</mat-icon>
     </button>
@@ -24,12 +24,12 @@
 </div>
 
 <ng-template #buttonNext>
-  <button mat-icon-button [disabled]="selectedOption === null" (click)="nextQuestion()">
+  <button mat-icon-button [disabled]="!selectedAnswer" (click)="nextQuestion()">
     <mat-icon>arrow_forward_ios</mat-icon>
   </button>
 </ng-template>
 
 <ng-template #buttonFinish>
-  <button class="" mat-flat-button color="primary" (click)="navigateToResultPage()"
-    [disabled]="selectedOption === null">Finish</button>
+  <button mat-flat-button color="primary" (click)="finishQuestionnaire()"
+    [disabled]="!selectedAnswer">Finish</button>
 </ng-template>

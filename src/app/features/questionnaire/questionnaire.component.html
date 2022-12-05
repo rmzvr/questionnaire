@@ -1,5 +1,5 @@
 <app-header [context]="'questionnaire'"></app-header>
 <div class="container">
   <img class="image" src="assets/img/questionnaire-page.jpeg" alt="main image" width="600px">
-  <app-form-extended [questions]="questions"></app-form-extended>
+  <app-form *ngIf="questions$ | async as questions" [questions]="questions"></app-form>
 </div>

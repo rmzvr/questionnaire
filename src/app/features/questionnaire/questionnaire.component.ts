@@ -1,5 +1,8 @@
+import { EMPTY, Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from './services/questions.service';
+import { ActivatedRoute } from '@angular/router';
+import { Question } from './models/questionnaire.model';
 
 @Component({
   selector: 'app-questionnaire',
@@ -7,13 +10,16 @@ import { QuestionsService } from './services/questions.service';
   styleUrls: ['./questionnaire.component.scss'],
 })
 export class QuestionnaireComponent implements OnInit {
-  public questions: any;
+  public questions$: Observable<Question[]> = EMPTY;
 
-  constructor(private questionsService: QuestionsService) {}
+  constructor(
+    private router: ActivatedRoute,
+    private questionsService: QuestionsService
+  ) {}
 
   ngOnInit(): void {
-    if (!this.questions?.length) {
-      this.questions = this.questionsService.getQuestions();
-    }
+    const questionnaireId: string = this.router.snapshot.params['id'];
+
+    this.questions$ = this.questionsService.getQuestions(questionnaireId);
   }
 }

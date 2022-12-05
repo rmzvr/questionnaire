@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuestionnairesComponent } from './questionnaires.component';
@@ -14,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
     CoreModule,
     MatGridListModule,
     MatCardModule,
+    HttpClientModule
   ],
 })
 export class QuestionnairesModule {}

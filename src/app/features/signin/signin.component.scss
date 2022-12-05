@@ -33,15 +33,17 @@ $basic-color: #c1e9fc;
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
 
   min-height: 100vh;
   align-content: center;
-  gap: 5rem;
+  gap: 10rem;
 }
 
 img {
-  justify-self: flex-start;
+  max-width: 85%;
+
+  align-self: center;
 }
 
 .example-container mat-form-field + mat-form-field {
@@ -58,16 +60,14 @@ input.example-right-align::-webkit-inner-spin-button {
 }
 
 .form {
-  width: 30rem;
+  width: 85%;
+  max-width: 30rem;
   height: fit-content;
 
   display: grid;
-  justify-self: center;
+  justify-self: right;
   align-self: center;
   gap: 0.4rem;
-
-  margin-top: 2rem;
-  margin-left: 4rem;
 }
 
 mat-hint {

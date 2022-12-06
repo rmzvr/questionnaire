@@ -1,3 +1,4 @@
+import { ConfirmAccountComponent } from './features/confirm-account/confirm-account.component';
 import { ResultComponent } from './features/result/result.component';
 import { QuestionnaireComponent } from './features/questionnaire/questionnaire.component';
 import { QuestionnairesComponent } from './features/questionnaires/questionnaires.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
     component: ResultComponent,
   },
   { path: 'trainings', component: TrainingsComponent },
+  { path: 'confirm', component: ConfirmAccountComponent },
 ];
 
 @NgModule({

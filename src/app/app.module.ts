@@ -1,3 +1,4 @@
+import { ConfirmAccountModule } from './features/confirm-account/confirm-account.module';
 import { ResultModule } from './features/result/result.module';
 import { QuestionnaireModule } from './features/questionnaire/questionnaire.module';
 import { QuestionnairesModule } from './features/questionnaires/questionnaires.module';
@@ -29,6 +30,7 @@ import { ProfileModule } from './features/profile/profile.module';
     QuestionnairesModule,
     QuestionnaireModule,
     ResultModule,
+    ConfirmAccountModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

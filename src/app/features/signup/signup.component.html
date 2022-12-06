@@ -9,7 +9,7 @@
 
 <div class="container">
   <img src="assets/img/register-page.jpeg" alt="login main image" width="800">
-  <form class="form" (submit)="submit($event)" [formGroup]="registerForm">
+  <form class="form" (submit)="submit($event, formDirective)" [formGroup]="registerForm" #formDirective="ngForm">
     <mat-form-field appearance="outline">
       <mat-label>Enter your name</mat-label>
 

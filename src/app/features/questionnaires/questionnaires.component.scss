@@ -1,6 +1,7 @@
 .container {
   display: grid;
   justify-content: center;
+  justify-items: center;
   align-content: flex-start;
 
   min-height: 100vh;
@@ -15,9 +16,7 @@
 }
 
 .questionnaires {
-  display: grid;
-  grid-auto-flow: column;
-  align-content: flex-start;
+  display: flex;
   gap: 4rem;
 }
 

@@ -24,11 +24,11 @@ const routes: Routes = [
   },
   { path: 'profile', component: ProfileComponent },
   {
-    path: 'questionnaires/:name',
+    path: 'questionnaires/:id',
     component: QuestionnaireComponent,
   },
   {
-    path: 'questionnaires/:name/result',
+    path: 'questionnaires/:id/result',
     component: ResultComponent,
   },
   { path: 'trainings', component: TrainingsComponent },

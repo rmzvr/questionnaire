@@ -52,7 +52,9 @@ export class SigninComponent implements OnInit {
         username: this.loginForm.value['email'],
         password: this.loginForm.value['password'],
       })
-      .subscribe(() => {
+      .subscribe((res) => {
+        localStorage.setItem('token', res.jwtAccess);
+
         this.router.navigate(['/profile']);
       });
   }

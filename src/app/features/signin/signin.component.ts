@@ -55,7 +55,7 @@ export class SigninComponent implements OnInit {
       .subscribe((res) => {
         localStorage.setItem('token', res.jwtAccess);
 
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/']);
       });
   }
 }

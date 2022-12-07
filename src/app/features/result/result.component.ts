@@ -37,6 +37,10 @@ export class ResultComponent implements OnInit {
       .afterClosed()
       .pipe(take(1))
       .subscribe((result) => {
+        if (!result) {
+          return;
+        }
+
         sessionStorage.setItem('email', result);
 
         this.openRegisterDialog();
@@ -54,7 +58,7 @@ export class ResultComponent implements OnInit {
       .subscribe((result) => {
         sessionStorage.setItem('password', result);
 
-        this.router.navigate(['/profile'])
+        this.router.navigate(['/profile']);
       });
   }
 }

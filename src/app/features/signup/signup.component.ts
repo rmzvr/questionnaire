@@ -1,3 +1,4 @@
+import { ConfirmEmailDialogComponent } from './../../shared/components/confirm-email-dialog/confirm-email-dialog.component';
 import { SignupService } from './services/signup.service';
 import { Component } from '@angular/core';
 import {
@@ -7,7 +8,6 @@ import {
   FormGroupDirective,
   Validators,
 } from '@angular/forms';
-import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -58,7 +58,7 @@ export class SignupComponent {
       this.registerForm.reset();
       formDirective.resetForm();
 
-      this.dialog.open(ConfirmDialogComponent);
+      this.dialog.open(ConfirmEmailDialogComponent);
     });
   }
 }

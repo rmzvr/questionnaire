@@ -24,10 +24,19 @@
 
     <div class="setting-container">
         <h2>Profile</h2>
-        <app-avatar-panel class="panel" (removeAvatar)="addItem($event)"></app-avatar-panel>
-        <app-email-panel class="panel" [userEmail]="user.email"></app-email-panel>
-        <app-password-panel class="panel" [userPas]="user.password"></app-password-panel>
-        <app-additional-panel class="panel"></app-additional-panel>
+        <mat-tab-group>
+            <mat-tab label="Setting" class="tab-menu">
+                <div class="tab-content">
+                    <app-avatar-panel class="panel" (removeAvatar)="addItem($event)"></app-avatar-panel>
+                    <app-email-panel class="panel" [userEmail]="user.email"></app-email-panel>
+                    <app-password-panel class="panel" [userPas]="user.password"></app-password-panel>
+                    <app-additional-panel class="panel"></app-additional-panel>
+                </div>
+            </mat-tab>
+            <mat-tab label="Results history">
+            </mat-tab>
+        </mat-tab-group>
+
 
     </div>
 

@@ -10,6 +10,7 @@ import { ProfileComponent } from './features/profile/profile.component';
 import { SigninComponent } from './features/signin/signin.component';
 import { SignupComponent } from './features/signup/signup.component';
 import { TrainingsComponent } from './features/trainings/trainings.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,7 +24,7 @@ const routes: Routes = [
     path: 'questionnaires',
     component: QuestionnairesComponent,
   },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   {
     path: 'questionnaires/:id',
     component: QuestionnaireComponent,

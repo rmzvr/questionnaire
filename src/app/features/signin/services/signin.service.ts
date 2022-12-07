@@ -15,4 +15,8 @@ export class SigninService {
       credentials
     ) as Observable<LoginResponse>;
   }
+
+  public get isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
 }

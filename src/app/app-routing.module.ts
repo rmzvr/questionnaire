@@ -33,7 +33,7 @@ const routes: Routes = [
     component: ResultComponent,
   },
   { path: 'trainings', component: TrainingsComponent },
-  { path: 'confirm', component: ConfirmAccountComponent },
+  { path: 'confirm/:id', component: ConfirmAccountComponent },
 ];
 
 @NgModule({

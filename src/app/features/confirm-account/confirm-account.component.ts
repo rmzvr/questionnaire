@@ -17,7 +17,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./confirm-account.component.scss'],
 })
 export class ConfirmAccountComponent implements OnInit {
-  private maxValue: number = 5;
+  private maxValue: number = 3;
   public countDown$: Observable<number> = EMPTY;
 
   constructor(
@@ -27,18 +27,16 @@ export class ConfirmAccountComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe((queryParam: any) => {
-      this.confirmAccountService
-        .confirmAccount(queryParam['token'])
-        .subscribe(() => {
-          this.countDown$ = interval(1000).pipe(
-            map((value) => this.maxValue - value),
-            takeWhile((x) => x >= 0),
-            finalize(() => {
-              this.router.navigate(['/profile']);
-            })
-          );
-        });
+    this.activatedRoute.params.subscribe((params) => {
+      this.confirmAccountService.confirmAccount(params['id']).subscribe(() => {
+        this.countDown$ = interval(1000).pipe(
+          map((value) => this.maxValue - value),
+          takeWhile((x) => x >= 0),
+          finalize(() => {
+            this.router.navigate(['/profile']);
+          })
+        );
+      });
     });
   }
 }

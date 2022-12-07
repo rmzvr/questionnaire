@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileCardComponent } from './profile-card.component';
+import { ResultHistoryComponent } from './result-history.component';
 
-describe('ProfileCardComponent', () => {
-  let component: ProfileCardComponent;
-  let fixture: ComponentFixture<ProfileCardComponent>;
+describe('ResultHistoryComponent', () => {
+  let component: ResultHistoryComponent;
+  let fixture: ComponentFixture<ResultHistoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProfileCardComponent ]
+      declarations: [ ResultHistoryComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProfileCardComponent);
+    fixture = TestBed.createComponent(ResultHistoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

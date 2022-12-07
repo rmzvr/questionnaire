@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreModule } from 'src/app/core/core.module';
 import { ProfileComponent } from './profile.component';
-import { ProfileCardComponent } from './components/profile-card/profile-card.component';
+import { ResultHistoryComponent } from './components/result-history/result-history.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +20,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatSelectCountryModule } from "@angular-material-extensions/select-country";
 import {HttpClientModule} from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+
 
 
 
@@ -27,11 +29,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 @NgModule({
   declarations: [
     ProfileComponent,
-    ProfileCardComponent,
     EmailPanelComponent,
     PasswordPanelComponent,
     AvatarPanelComponent,
     AdditionalPanelComponent,
+    ResultHistoryComponent,
   ],
   imports: [
     CommonModule,
@@ -49,7 +51,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     NgxMatFileInputModule,
     MatSelectModule,
     MatSelectCountryModule.forRoot('de'),
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
+    
   ],
   exports: [ProfileComponent]
 })

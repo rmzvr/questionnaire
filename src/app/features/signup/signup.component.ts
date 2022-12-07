@@ -1,10 +1,14 @@
+import { SignupService } from './services/signup.service';
 import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
+  FormGroupDirective,
   Validators,
 } from '@angular/forms';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +20,11 @@ export class SignupComponent {
 
   public registerForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private signupService: SignupService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -43,9 +51,14 @@ export class SignupComponent {
     return this.registerForm.get('password') as FormControl;
   }
 
-  public submit(event: Event): void {
+  public submit(event: Event, formDirective: FormGroupDirective): void {
     event.preventDefault();
 
-    //! Register user
+    this.signupService.register(this.registerForm.value).subscribe(() => {
+      this.registerForm.reset();
+      formDirective.resetForm();
+
+      this.dialog.open(ConfirmDialogComponent);
+    });
   }
 }

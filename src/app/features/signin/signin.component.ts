@@ -1,3 +1,4 @@
+import { SigninService } from './services/signin.service';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -5,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -16,7 +18,11 @@ export class SigninComponent implements OnInit {
 
   public loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private signinService: SigninService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -31,16 +37,23 @@ export class SigninComponent implements OnInit {
   }
 
   public get email(): FormControl {
-    return this.loginForm.get('email') as FormControl
+    return this.loginForm.get('email') as FormControl;
   }
 
   public get password(): FormControl {
-    return this.loginForm.get('password') as FormControl
+    return this.loginForm.get('password') as FormControl;
   }
 
   public submit(event: Event): void {
     event.preventDefault();
 
-    //! Login user
+    this.signinService
+      .login({
+        username: this.loginForm.value['email'],
+        password: this.loginForm.value['password'],
+      })
+      .subscribe(() => {
+        this.router.navigate(['/profile']);
+      });
   }
 }

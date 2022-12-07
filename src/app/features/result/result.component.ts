@@ -26,6 +26,10 @@ export class ResultComponent {
       .afterClosed()
       .pipe(take(1))
       .subscribe((result) => {
+        if (!result) {
+          return;
+        }
+
         sessionStorage.setItem('email', result);
 
         this.openRegisterDialog();

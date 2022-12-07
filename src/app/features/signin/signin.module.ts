@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SigninComponent } from './signin.component';
@@ -22,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
+    HttpClientModule
   ],
   exports: [SigninComponent],
 })

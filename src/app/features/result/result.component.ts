@@ -30,7 +30,8 @@ export class ResultComponent {
           return;
         }
 
-        sessionStorage.setItem('email', result);
+        sessionStorage.setItem('name', result.name);
+        sessionStorage.setItem('email', result.email);
 
         this.openRegisterDialog();
       });

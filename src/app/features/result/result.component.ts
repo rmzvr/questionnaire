@@ -1,3 +1,4 @@
+import { ConfirmEmailDialogComponent } from './../../shared/components/confirm-email-dialog/confirm-email-dialog.component';
 import { EmailDialogComponent } from './components/email-dialog/email-dialog.component';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -57,7 +58,9 @@ export class ResultComponent {
             email: sessionStorage.getItem('email') ?? '',
             password,
           })
-          .subscribe();
+          .subscribe(() => {
+            this.dialog.open(ConfirmEmailDialogComponent);
+          });
       });
   }
 }

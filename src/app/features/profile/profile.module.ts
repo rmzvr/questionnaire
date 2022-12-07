@@ -19,6 +19,8 @@ import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatSelectCountryModule } from "@angular-material-extensions/select-country";
 import {HttpClientModule} from '@angular/common/http';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 
@@ -47,6 +49,7 @@ import {HttpClientModule} from '@angular/common/http';
     NgxMatFileInputModule,
     MatSelectModule,
     MatSelectCountryModule.forRoot('de'),
+    MatTabsModule
   ],
   exports: [ProfileComponent]
 })

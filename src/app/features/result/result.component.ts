@@ -59,6 +59,8 @@ export class ResultComponent {
             password,
           })
           .subscribe(() => {
+            sessionStorage.clear()
+
             this.dialog.open(ConfirmEmailDialogComponent);
           });
       });

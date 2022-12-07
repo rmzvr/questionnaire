@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { Router } from '@angular/router';
+import { ProfileService } from '../../services/profile.service';
 
 @Component({
   selector: 'app-password-panel',
@@ -22,7 +24,11 @@ export class PasswordPanelComponent implements OnInit {
     Validators.pattern(/(?=.*\d)(?=.*[A-Z])((?=.*\W)|(?=.*_))^[^ ]+$/)
   ]
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private profileService: ProfileService,
+    private router: Router
+
+  ) { }
 
   ngOnInit(): void {
     this.changePasForm = this.formBuilder.group({
@@ -43,7 +49,17 @@ export class PasswordPanelComponent implements OnInit {
     return this.changePasForm.get('confirmPass') as FormControl
   }
 
-  protected add(): void {
+  public submit(event: Event): void {
+    event.preventDefault();
+
+    this.profileService
+      .changePassword({
+        currentPassword: this.changePasForm.value['currentPass'],
+        newPassword: this.changePasForm.value['newPass'],
+        conformNewPassword: this.changePasForm.value['confirmPass']
+      }) .subscribe(() => {
+        this.router.navigate(['/profile']);
+      });
   }
 
   protected closePanel(): void {

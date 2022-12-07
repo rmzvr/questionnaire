@@ -1,14 +1,6 @@
-import {
-  EMPTY,
-  finalize,
-  interval,
-  map,
-  Observable,
-  takeWhile,
-  tap,
-} from 'rxjs';
+import { switchMap } from 'rxjs';
 import { ConfirmAccountService } from './services/confirm-account.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -17,9 +9,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./confirm-account.component.scss'],
 })
 export class ConfirmAccountComponent implements OnInit {
-  private maxValue: number = 3;
-  public countDown$: Observable<number> = EMPTY;
-
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -27,16 +16,18 @@ export class ConfirmAccountComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      this.confirmAccountService.confirmAccount(params['id']).subscribe(() => {
-        this.countDown$ = interval(1000).pipe(
-          map((value) => this.maxValue - value),
-          takeWhile((x) => x >= 0),
-          finalize(() => {
-            this.router.navigate(['/profile']);
-          })
-        );
-      });
-    });
+    this.activatedRoute.params
+      .pipe(
+        switchMap((params: Params): any => {
+          this.confirmAccountService
+            .confirmAccount(params['id'])
+            .subscribe(({ token }) => {
+              localStorage.setItem('token', token);
+
+              this.router.navigate(['/']);
+            });
+        })
+      )
+      .subscribe();
   }
 }

@@ -1,3 +1,4 @@
+import { BASE_URL } from 'src/constants';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,7 +12,7 @@ export class SigninService {
 
   public login(credentials: LoginCredentials): Observable<LoginResponse> {
     return this.http.post(
-      'http://localhost:8088/authentication/login',
+      `${BASE_URL}/authentication/login`,
       credentials
     ) as Observable<LoginResponse>;
   }

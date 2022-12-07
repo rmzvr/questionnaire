@@ -7,20 +7,19 @@ import {
   ExtendedAnswer,
   Question,
 } from '../models/questionnaire.model';
+import { BASE_URL } from 'src/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuestionsService {
-  private baseUrl: string = 'http://localhost:8088';
-
   public answers = new BehaviorSubject<ExtendedAnswer[]>([]);
 
   constructor(private http: HttpClient) {}
 
   public getQuestions(id: string): Observable<Question[]> {
     return this.http.get(
-      `${this.baseUrl}/questionnaires/${id}/questions`
+      `${BASE_URL}/questionnaires/${id}/questions`
     ) as Observable<Question[]>;
   }
 
@@ -45,7 +44,7 @@ export class QuestionsService {
   }
 
   public sendResult(id: string): Observable<Result> {
-    return this.http.post(`${this.baseUrl}/result`, {
+    return this.http.post(`${BASE_URL}/result`, {
       questionnaireId: id,
       answers: this.answers.value,
     }) as Observable<Result>;

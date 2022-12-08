@@ -38,7 +38,6 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.user = this.profileService.getUserInfo()
     this.token = localStorage.getItem('token')
     this.profileService.getUserInfo().subscribe((user) => {
       this.user = user
@@ -47,6 +46,11 @@ export class ProfileComponent implements OnInit {
 
   public addItem(removeAvatar: string): void {
     this.profileImage = removeAvatar;
+  }
+
+  public logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['/']);
   }
 
 }

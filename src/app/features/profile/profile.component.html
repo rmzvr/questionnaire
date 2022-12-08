@@ -6,19 +6,22 @@
         </div>
         <div class="user-info-container">
             <div class="user-info">
-                <div class="user-info-item" >
+                <div class="user-info-item">
                     <h2>Name:</h2>
-                    <h2 >{{user.name}}</h2>
+                    <h2>{{user.name}}</h2>
                 </div>
                 <div class="user-info-item">
                     <h3>Birthday:</h3>
-                    <h3 >{{user.birthday}}</h3>
+                    <h3>{{user.birthday}}</h3>
                 </div>
                 <div class="user-info-item">
                     <p>Country:</p>
-                    <p >{{user.country}}</p>
+                    <p>{{user.country}}</p>
                 </div>
             </div>
+            <button id="logout-button" color="accent" mat-stroked-button (click)="logout()"><mat-icon
+                    aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon>
+                Logout</button>
         </div>
     </div>
 

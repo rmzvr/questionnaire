@@ -1,41 +1,41 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-mat-expansion-panel{
+mat-expansion-panel {
     width: 40vw;
+    margin: 10px 0;
 }
 
-.info-item-container{
+.info-item-container {
     display: flex;
     flex-direction: column;
 
-    .info-item{
+    .info-item {
         display: flex;
         justify-content: space-around;
     }
 }
 
-form{
+form {
     display: flex;
     align-self: center;
 
-    mat-form-field{
+    mat-form-field {
         font-size: 1em;
         margin-top: 15px;
 
-        ngx-mat-file-input{
+        ngx-mat-file-input {
             justify-content: center;
         }
     }
 }
 
-
-.button{
+.button {
     align-self: center;
     padding: 5px 10px;
     width: 45px;
     margin: 0 10px;
     font-size: 1.5em;
     cursor: pointer;
-    }
+}

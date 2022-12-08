@@ -12,7 +12,7 @@ import { ProfileService } from '../../services/profile.service';
 export class PasswordPanelComponent implements OnInit {
 
   @Input()
-  public userPas: string = ''
+  public token :string | null = null
   public panelOpenState: boolean = false
   public changePas: boolean = false
   public hide = true;

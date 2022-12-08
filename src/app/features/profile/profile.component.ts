@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   @Input()
   protected country: string = '-'
  
+  public token :string | null = null
 
   protected user: Observable<User> = EMPTY
 
@@ -33,6 +34,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.profileService.getUserInfo()
+    this.token = localStorage.getItem('token')
 
   }
 

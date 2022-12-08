@@ -6,6 +6,16 @@ import { Avatar } from '../models/avatar.model';
 import { Email } from '../models/email.model';
 import { Password } from '../models/password.model';
 import { User } from '../models/user.model';
+import { HttpHeaders } from '@angular/common/http';
+
+const token = localStorage.getItem('token')?.toString()
+
+const httpOptions = {
+    headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+    })
+};
 
 @Injectable({
     providedIn: 'root',
@@ -35,9 +45,10 @@ export class ProfileService {
     }
     public changePassword(passwords: Password): Observable<Password> {
         console.log(passwords)
+        console.log(httpOptions)
         return this.http.post(
-            'http://localhost:8088//authentication/reset-password',
-            passwords
+            'http://localhost:8088/authentication/reset-password',
+            passwords, httpOptions
         ) as Observable<Password>;
     }
 

@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from 'src/app/core/models/user.model';
+import { Router } from '@angular/router';
+import { EMPTY, Observable } from 'rxjs';
+import { User } from 'src/app/features/profile/models/user.model';
 import { UserDate } from './mock-data/userInfo';
+import { ProfileService } from './services/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -18,15 +21,18 @@ export class ProfileComponent implements OnInit {
   protected birthday: string = '-'
   @Input()
   protected country: string = '-'
-  @Input()
-  protected favouriteColor: string = '-'
+ 
 
-  protected user: User = UserDate
+  protected user: Observable<User> = EMPTY
 
-  constructor() { }
+  constructor(
+    private profileService: ProfileService,
+    private router: Router
+      ) { }
 
 
   ngOnInit(): void {
+    this.user = this.profileService.getUserInfo()
   }
 
   public addItem(removeAvatar: string): void {

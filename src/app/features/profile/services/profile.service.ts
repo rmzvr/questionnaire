@@ -5,12 +5,20 @@ import { AdditionalInfo } from '../models/additional-info.model';
 import { Avatar } from '../models/avatar.model';
 import { Email } from '../models/email.model';
 import { Password } from '../models/password.model';
+import { User } from '../models/user.model';
 
 @Injectable({
     providedIn: 'root',
 })
 export class ProfileService {
     constructor(private http: HttpClient) { }
+
+    public getUserInfo(): Observable<User> {
+        return this.http.get(
+            'http://localhost:8088/...',
+
+        ) as Observable<User>;
+    }
 
     public AddAvatar(avatar: Avatar): Observable<Avatar> {
         return this.http.post(

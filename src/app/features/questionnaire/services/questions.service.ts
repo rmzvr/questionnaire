@@ -44,7 +44,7 @@ export class QuestionsService {
   }
 
   public sendResult(id: string): Observable<Result> {
-    return this.http.post(`${BASE_URL}/result`, {
+    return this.http.post(`${BASE_URL}/questionnaires/${id}/quiz`, {
       questionnaireId: id,
       answers: this.answers.value,
     }) as Observable<Result>;

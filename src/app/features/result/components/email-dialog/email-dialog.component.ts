@@ -22,8 +22,13 @@ export class EmailDialogComponent {
 
   ngOnInit(): void {
     this.emailForm = this.formBuilder.group({
+      name: new FormControl('', [Validators.required, Validators.minLength(2)]),
       email: new FormControl('', [Validators.required, Validators.email]),
     });
+  }
+
+  public get name(): FormControl {
+    return this.emailForm.get('name') as FormControl;
   }
 
   public get email(): FormControl {
@@ -31,6 +36,6 @@ export class EmailDialogComponent {
   }
 
   public submit(): void {
-    this.dialogRef.close(this.emailForm.value.email);
+    this.dialogRef.close(this.emailForm.value);
   }
 }

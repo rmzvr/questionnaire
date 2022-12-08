@@ -10,11 +10,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [SignupComponent, ConfirmDialogComponent],
+  declarations: [SignupComponent],
   imports: [
     CommonModule,
     CoreModule,
@@ -26,7 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     MatIconModule,
     HttpClientModule,
-    MatDialogModule,
+    SharedModule,
   ],
   exports: [SignupComponent],
 })

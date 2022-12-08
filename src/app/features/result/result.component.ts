@@ -1,9 +1,11 @@
+import { ConfirmEmailDialogComponent } from './../../shared/components/confirm-email-dialog/confirm-email-dialog.component';
 import { EmailDialogComponent } from './components/email-dialog/email-dialog.component';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterDialogComponent } from './components/register-dialog/register-dialog.component';
 import { take } from 'rxjs';
+import { SignupService } from '../signup/services/signup.service';
 
 @Component({
   selector: 'app-result',
@@ -11,7 +13,11 @@ import { take } from 'rxjs';
   styleUrls: ['./result.component.scss'],
 })
 export class ResultComponent {
-  constructor(private router: Router, private dialog: MatDialog) {}
+  constructor(
+    private router: Router,
+    private dialog: MatDialog,
+    private signupService: SignupService
+  ) {}
 
   public navitageToQuestionnairePage(): void {
     this.router.navigate([this.router.url.slice(0, -6)]);
@@ -30,7 +36,8 @@ export class ResultComponent {
           return;
         }
 
-        sessionStorage.setItem('email', result);
+        sessionStorage.setItem('name', result.name);
+        sessionStorage.setItem('email', result.email);
 
         this.openRegisterDialog();
       });
@@ -44,10 +51,18 @@ export class ResultComponent {
     dialogRef
       .afterClosed()
       .pipe(take(1))
-      .subscribe((result) => {
-        sessionStorage.setItem('password', result);
+      .subscribe((password) => {
+        this.signupService
+          .register({
+            name: sessionStorage.getItem('name') ?? '',
+            email: sessionStorage.getItem('email') ?? '',
+            password,
+          })
+          .subscribe(() => {
+            sessionStorage.clear()
 
-        this.router.navigate(['/profile']);
+            this.dialog.open(ConfirmEmailDialogComponent);
+          });
       });
   }
 }

@@ -1,21 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { SigninService } from './../../../features/signin/services/signin.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input()
   context: string = '';
 
-constructor(
-  private route: ActivatedRoute
-
-){}
-
-ngOnInit(){  
-}
-
+  constructor(public signinService: SigninService) {}
 }

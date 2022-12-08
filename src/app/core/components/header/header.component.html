@@ -1,10 +1,9 @@
 <mat-toolbar>
-  <span>Application</span>
+  <a routerLink="/" class="page-link" mat-button color="primary">Application</a>
+  
   <div class="link-menu">
-    <a routerLink="/" class="page-link" mat-button color="primary" *ngIf="context !== 'homepage'">Home page</a>
     <a routerLink="/trainings" class="page-link" mat-button color="primary"
       *ngIf="context !== 'trainings'">Trainings</a>
-
   </div>
   <span class="example-spacer"></span>
 

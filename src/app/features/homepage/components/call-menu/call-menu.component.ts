@@ -12,9 +12,6 @@ import { TherapyFormComponent } from '../therapy-form/therapy-form.component';
 })
 export class CallMenuComponent {
 
-  @Input()
-  public specialists :Specialists[] = []
-
   constructor(
     public dialog: MatDialog
   ) { }

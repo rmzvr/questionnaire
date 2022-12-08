@@ -5,14 +5,11 @@
        <p>Please,<a (click)="close()" routerLink="/register">register</a> and return</p>
     </div>
 
-    <div class="register-form-container" *ngIf="isRegister">
+    <div class="register-form-container" *ngIf="isRegister" >
         <label class="formLabel">
             Specialist name:
-                <select class="form-input" name="specialist-name" id="specialist-name" placeholder="Enter specialist" [(ngModel)]="specialistName">
-                    <option value="Dr. Michelle Lind">Dr. Michelle Lind</option>
-                    <option value="Dr.Elizabeth Strong">Dr.Elizabeth Strong</option>
-                    <option value="Dr.Tonia Cassaday">Dr.Tonia Cassaday</option>
-                    <option value="Dr.Dawn Brown">Dr.Dawn Brown</option>
+                <select class="form-input" name="specialist-name" id="specialist-name" placeholder="Enter specialist" [(ngModel)]="specialistName" *ngFor="let specialist of specialists | async">
+                    <option value={{specialist.name}}>{{specialist.name}}</option>
                 </select>
         </label>
 

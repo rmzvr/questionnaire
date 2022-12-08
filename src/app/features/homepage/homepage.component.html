@@ -11,15 +11,14 @@
 
     <div class="card-container">
         <h2>About Us</h2>
-        <div class="info-container" *ngFor="let item of projectInfo ">
+        <div class="info-container" *ngFor="let item of projectInfo | async">
             <app-info-card [title]="item.title" [description]="item.description"></app-info-card>
         </div>
-
 
         <h2>Our Psychologists</h2>
 
         <div class="specialist-container">
-            <div *ngFor="let specialist of specialists ">
+            <div *ngFor="let specialist of specialists | async">
                 <app-specialist-card [id]="specialist.id" [name]="specialist.name" [info]="specialist.info"
                     [image]="specialist.image"></app-specialist-card>
 
@@ -29,7 +28,7 @@
 
     </div>
 
-    <div class="call-container">
+    <div class="call-container" *ngFor="let specialists async">
         <app-call-menu [specialists]="specialists"></app-call-menu>
     </div>
 </div>

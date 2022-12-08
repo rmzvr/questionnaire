@@ -21,21 +21,28 @@ export class ProfileComponent implements OnInit {
   protected birthday: string = '-'
   @Input()
   protected country: string = '-'
- 
-  public token :string | null = null
 
-  protected user: Observable<User> = EMPTY
+  public token: string | null = null
+
+  protected user: User = {
+    id: '',
+    name: '',
+    email: '',
+    password: ''
+  }
 
   constructor(
     private profileService: ProfileService,
     private router: Router
-      ) { }
+  ) { }
 
 
   ngOnInit(): void {
-    this.user = this.profileService.getUserInfo()
+    // this.user = this.profileService.getUserInfo()
     this.token = localStorage.getItem('token')
-
+    this.profileService.getUserInfo().subscribe((user) => {
+      this.user = user
+    })
   }
 
   public addItem(removeAvatar: string): void {

@@ -53,8 +53,10 @@ export class ProfileService {
     }
 
     public addAdditionalInfo(additionalInfo: AdditionalInfo): Observable<AdditionalInfo> {
-        return this.http.post(
-            'http://localhost:8088/...',
+        console.log(additionalInfo)
+        return this.http.patch(
+            // 'http://localhost:8088/...',
+           ' http://192.168.100.63:8087/users/1 ',
             additionalInfo
         ) as Observable<AdditionalInfo>;
     }

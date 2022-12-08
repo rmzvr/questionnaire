@@ -33,6 +33,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.profileService.getUserInfo()
+
   }
 
   public addItem(removeAvatar: string): void {

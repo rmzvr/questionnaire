@@ -1,4 +1,5 @@
 <app-header [context]="'questionnaires'"></app-header>
+
 <div class="container">
   <img class="image" src="assets/img/questionnaire-page.jpeg" alt="questionnaires page image" width="800">
 
@@ -8,8 +9,10 @@
       <mat-card-header>
         <mat-card-title>{{ questionnaire.name }}</mat-card-title>
       </mat-card-header>
+      
       <mat-card-content>{{ questionnaire.description }}</mat-card-content>
     </mat-card>
   </div>
-
 </div>
+
+<app-footer></app-footer>

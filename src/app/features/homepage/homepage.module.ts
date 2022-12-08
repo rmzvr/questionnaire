@@ -20,7 +20,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { CallFormComponent } from './components/call-form/call-form.component';
 
@@ -51,6 +51,7 @@ import { CallFormComponent } from './components/call-form/call-form.component';
     MatDialogModule,
     MatDatepickerModule,
     MatFormFieldModule,
+    ReactiveFormsModule,
     MatNativeDateModule,
     MatInputModule
   ],

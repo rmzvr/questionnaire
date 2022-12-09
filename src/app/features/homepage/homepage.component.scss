@@ -63,7 +63,7 @@ app-call-menu {
 
 .container-body {
     background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, #c1e9fc 100%);
+    background: var(--gradient);
     position: relative;
     z-index: 0;
     padding-bottom: 20px;

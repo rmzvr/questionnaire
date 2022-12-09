@@ -14,6 +14,7 @@ import { SigninModule } from './features/signin/signin.module';
 import { RestorePasswordModule } from './features/restore-password/restore-password.module';
 import { TrainingsModule } from './features/trainings/trainings.module';
 import { ProfileModule } from './features/profile/profile.module';
+import { WheelModule } from './features/wheel/wheel.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { ProfileModule } from './features/profile/profile.module';
     QuestionnaireModule,
     ResultModule,
     ConfirmAccountModule,
+    WheelModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

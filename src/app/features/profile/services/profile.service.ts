@@ -7,6 +7,7 @@ import { Email } from '../models/email.model';
 import { Password } from '../models/password.model';
 import { User } from '../models/user.model';
 import { HttpHeaders } from '@angular/common/http';
+import { Result } from '../models/result.model';
 
 const token = localStorage.getItem('token')?.toString()
 
@@ -25,7 +26,7 @@ export class ProfileService {
 
     public getUserInfo(): Observable<User> {
         return this.http.get(
-            'http://localhost:8088/users/1',
+            'http://localhost:8088/users/1',httpOptions
 
         ) as Observable<User>;
     }
@@ -38,8 +39,7 @@ export class ProfileService {
     }
 
     public changePassword(passwords: Password): Observable<Password> {
-        console.log(passwords)
-        console.log(httpOptions)
+
         return this.http.post(
             'http://localhost:8088/authentication/reset-password',
             passwords, httpOptions
@@ -51,8 +51,15 @@ export class ProfileService {
         return this.http.patch(
             //todo user id
             'http://localhost:8088/users/1',
-            additionalInfo
+            additionalInfo,httpOptions
         ) as Observable<AdditionalInfo>;
+    }
+
+    public getResultHistory(): Observable<Result[]> {
+        return this.http.get(
+            'http://localhost:8088/...',httpOptions
+
+        ) as Observable<Result[]>;
     }
 
 }

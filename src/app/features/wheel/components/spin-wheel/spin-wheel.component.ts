@@ -1,6 +1,9 @@
+import { MatDialog } from '@angular/material/dialog';
 import { WheelService } from '../../services/wheel.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgxWheelComponent } from 'ngx-wheel';
+import { DialogComponent } from '../dialog/dialog.component';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-spin-wheel',
@@ -10,8 +13,7 @@ import { NgxWheelComponent } from 'ngx-wheel';
 export class SpinWheelComponent implements OnInit {
   @ViewChild(NgxWheelComponent, { static: false }) wheel: any;
   public isButtonDisabled: boolean = false;
-
-  constructor(public wheelService: WheelService) {}
+  constructor(public wheelService: WheelService, private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -23,14 +25,16 @@ export class SpinWheelComponent implements OnInit {
   }
 
   after() {
-    const answer = window.confirm(
-      'Does this emoji corresponds with your mood now?'
-    );
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: { answer: null },
+    });
 
-    this.wheelService.updateStat(!!answer);
+    dialogRef.afterClosed().subscribe((result) => {
+      this.wheelService.updateStat(result);
 
-    this.isButtonDisabled = false;
+      this.isButtonDisabled = false;
 
-    this.wheelService.generateRandomId();
+      this.wheelService.generateRandomId();
+    });
   }
 }

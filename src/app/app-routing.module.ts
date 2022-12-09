@@ -11,6 +11,7 @@ import { SigninComponent } from './features/signin/signin.component';
 import { SignupComponent } from './features/signup/signup.component';
 import { TrainingsComponent } from './features/trainings/trainings.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { WheelComponent } from './features/wheel/wheel.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'questionnaires/:id/result',
     component: ResultComponent,
+  },
+  {
+    path: 'wheel',
+    component: WheelComponent,
   },
   { path: 'trainings', component: TrainingsComponent },
   { path: 'confirm/:id', component: ConfirmAccountComponent },

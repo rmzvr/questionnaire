@@ -1,0 +1,31 @@
+<app-header context="wheel"></app-header>
+
+<div class="containers">
+  <div class="wheel">
+    <h1>🙁What emoji are you?🙂</h1>
+    <app-spin-wheel></app-spin-wheel>
+  </div>
+
+  <div class="statistic">
+    <h2>Emotional map</h2>
+
+    <ng-container *ngFor="let option of wheelService.statItems">
+      <div class="head">
+        <span>Yes</span>
+        <span class="emoji">{{ option.text }}</span>
+        <span>{{ option.count }} answers</span>
+        <span>No</span>
+      </div>
+      <div>
+        <c-progress>
+          <c-progress-bar class="yes" [value]="option.getYesPercent()">{{floor(option.getYesPercent())}}
+          </c-progress-bar>
+          <c-progress-bar class="no" color="success" [value]="option.getNoPercent()">{{floor(option.getNoPercent())}}
+          </c-progress-bar>
+        </c-progress>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<app-footer></app-footer>

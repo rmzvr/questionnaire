@@ -60,6 +60,7 @@ export class PasswordPanelComponent implements OnInit {
       }).subscribe(() => {
         this.router.navigate(['/profile']);
       });
+      this.closePanel()
   }
 
   protected closePanel(): void {

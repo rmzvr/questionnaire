@@ -2,7 +2,7 @@
   min-height: calc(100vh - 64px);
 
   background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 35%, rgba(0, 159, 255, 1) 100%);
+  background: var(--gradient);
 
   display: grid;
   justify-content: center;

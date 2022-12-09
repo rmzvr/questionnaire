@@ -1,0 +1,29 @@
+mat-expansion-panel {
+    width: 40vw;
+    margin: 10px 0;
+}
+
+.info-item-container {
+    display: flex;
+    flex-direction: column;
+
+    .info-item {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+}
+
+form {
+    display: flex;
+    align-self: center;
+}
+
+.button {
+    align-self: center;
+    padding: 5px 10px;
+    width: 45px;
+    margin: 0 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}

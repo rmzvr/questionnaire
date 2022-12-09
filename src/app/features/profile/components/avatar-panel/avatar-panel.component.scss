@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+mat-expansion-panel {
+    width: 40vw;
+    margin: 10px 0;
+}
+
+.info-item-container {
+    display: flex;
+    flex-direction: column;
+
+    .info-item {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+form {
+    display: flex;
+    align-self: center;
+
+    mat-form-field {
+        font-size: 1em;
+        margin-top: 15px;
+
+        ngx-mat-file-input {
+            justify-content: center;
+        }
+    }
+}
+
+.button {
+    align-self: center;
+    padding: 5px 10px;
+    width: 45px;
+    margin: 0 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}

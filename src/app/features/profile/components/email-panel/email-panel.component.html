@@ -1,0 +1,26 @@
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="closePanel()">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Email
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="info-item-container">
+            <div class="info-item">
+                <p>{{userEmail}}</p>
+                <button (click)="changeEmail = !changeEmail" mat-raised-button>Change email</button>
+            </div>
+            <form class="form" *ngIf="changeEmail">
+                <mat-form-field>
+                    <mat-label>Change email:</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                        placeholder="email.pat@example.com">
+                    <mat-error *ngIf="emailFormControl.hasError('email') ">
+                        Please enter a valid email address
+                    </mat-error>
+                </mat-form-field>
+                <button class="save-button button" id="saveEmail" (click)="add()">&#10003;</button>
+            </form>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

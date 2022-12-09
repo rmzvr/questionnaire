@@ -1,0 +1,42 @@
+.container {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: flex-start;
+
+  min-height: 100vh;
+
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 55%, rgba(0, 159, 255, 1) 100%);
+}
+
+.image {
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+}
+
+.questionnaires {
+  display: flex;
+  gap: 4rem;
+}
+
+mat-card {
+  display: grid;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-title {
+  max-width: 29ch;
+}
+
+
+mat-card-content {
+  text-align: center;
+  max-width: 42ch;
+}

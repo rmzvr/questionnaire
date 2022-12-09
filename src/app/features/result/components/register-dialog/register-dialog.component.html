@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>The result has been sent to your mail</h1>
+
+<div mat-dialog-content>
+  <p class="info">
+    After completing the registration, you will have the opportunity to view the history of questionnaires in your
+    personal account.
+  </p>
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your password</mat-label>
+
+      <input formControlName="password" matInput [type]="isPasswordHidden ? 'password' : 'text'" required>
+
+      <button mat-icon-button matSuffix (click)="isPasswordHidden = !isPasswordHidden"
+        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="isPasswordHidden">
+        <mat-icon>{{isPasswordHidden ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+
+      <mat-error *ngIf="password.invalid && password.errors?.['required']">The password field is
+        required</mat-error>
+
+      <mat-error *ngIf="password.invalid && !password.errors?.['minlength'] && password.errors?.['minlength']">
+        The password should be at least 6 characters
+      </mat-error>
+
+      <mat-error *ngIf="password.invalid && password.errors?.['maxlength']">
+        The password should be maximum 24 characters
+      </mat-error>
+
+      <mat-error *ngIf="password.invalid && password.errors?.['pattern']">
+        Must have at least one uppercase letter, number, special symbol
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="password.invalid">
+      Go to profile
+    </button>
+  </form>
+</div>

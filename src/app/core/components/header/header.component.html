@@ -1,6 +1,18 @@
 <mat-toolbar>
-  <span>Application</span>
+  <a routerLink="/" class="page-link" mat-button color="primary">Application</a>
+  
+  <div class="link-menu">
+    <a routerLink="/trainings" class="page-link" mat-button color="primary"
+      *ngIf="context !== 'trainings'">Trainings</a>
+  </div>
   <span class="example-spacer"></span>
+
+  <ng-container *ngIf="signinService.isLoggedIn; else authButtons">
+    <a routerLink="/profile" mat-raised-button *ngIf="context !== 'profile'">Profile</a>
+  </ng-container>
+</mat-toolbar>
+
+<ng-template #authButtons>
   <a routerLink="/login" class="button-signin" mat-raised-button color="primary">Sign in</a>
   <a routerLink="/register" class="button-signup" mat-raised-button>Sign up</a>
-</mat-toolbar>
+</ng-template>

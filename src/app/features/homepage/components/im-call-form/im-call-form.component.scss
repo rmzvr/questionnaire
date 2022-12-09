@@ -1,0 +1,36 @@
+* {
+    font-family: "Cormorant Garamond", serif;
+}
+.form-container {
+    background-color: rgba(204, 200, 200, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.form-title {
+    color: #1a3088;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.text-container {
+    font-size: 1.5em;
+    &p{
+        margin-bottom: 10px;
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    padding: 5px 10px;
+    width: 45px;
+    font-size: 1.5em;
+    cursor: pointer;
+}

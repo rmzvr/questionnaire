@@ -1,0 +1,61 @@
+$accent-color: #1a3088;
+$accent-color-pink: #ff00aa;
+
+.results-container {
+    display: flex;
+    margin: 10px 0;
+    flex-direction: column;
+}
+
+mat-card {
+    margin-bottom: 10px;
+    font-family: "Cormorant Garamond", serif;
+    padding: 10px;
+
+    mat-card-title {
+        padding: 10px;
+        color: $accent-color;
+        font-family: "Cormorant Garamond", serif;
+    }
+
+    &:last-of-type span {
+        align-self: flex-end;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 0%;
+        height: 6px;
+        background-color: $accent-color-pink;
+        left: 50%;
+        bottom: 0;
+        transition: all 0.4s ease-in-out;
+    }
+
+    &:hover {
+        &:before {
+            width: 100%;
+            left: 0;
+            animation: 2s clockwise;
+            background-color: $accent-color;
+        }
+    }
+}
+@keyframes clockwise {
+    0% {
+        background-color: $accent-color-pink;
+    }
+    20% {
+        background-color: rgb(234, 7, 215);
+    }
+    50% {
+        background-color: rgb(189, 7, 234);
+    }
+    80% {
+        background-color: rgb(74, 6, 233);
+    }
+    100% {
+        background-color: $accent-color;
+    }
+}

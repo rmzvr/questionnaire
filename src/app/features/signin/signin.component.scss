@@ -1,0 +1,79 @@
+$basic-color: #c1e9fc;
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.button-signin {
+  margin-right: 0.6rem;
+}
+
+.mat-toolbar {
+  background-color: $basic-color;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  font-family: "Cormorant Garamond", serif;
+
+  a {
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  .link-menu {
+    display: flex;
+    width: 100%;
+
+    .page-link {
+      font-size: 1em;
+    }
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+
+  min-height: 100vh;
+  align-content: center;
+  gap: 10rem;
+}
+
+img {
+  max-width: 85%;
+
+  align-self: center;
+}
+
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+.form {
+  width: 85%;
+  max-width: 30rem;
+  height: fit-content;
+
+  display: grid;
+  justify-self: right;
+  align-self: center;
+  gap: 0.4rem;
+}
+
+mat-hint {
+  justify-self: flex-end;
+}
+
+.reset {
+  text-align: right;
+  text-decoration: none;
+}

@@ -8,8 +8,8 @@
     <div class="register-form-container" *ngIf="isRegister" >
         <label class="formLabel">
             Specialist name:
-                <select class="form-input" name="specialist-name" id="specialist-name" placeholder="Enter specialist" [(ngModel)]="specialistName" *ngFor="let specialist of specialists | async">
-                    <option value={{specialist.name}}>{{specialist.name}}</option>
+                <select class="form-input" name="specialist-name" id="specialist-name" placeholder="Enter specialist" [(ngModel)]="specialistName">
+                    <option  *ngFor="let specialist of specialists | async" value={{specialist.name}}>{{specialist.name}}</option>
                 </select>
         </label>
 

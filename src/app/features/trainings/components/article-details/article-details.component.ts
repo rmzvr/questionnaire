@@ -24,6 +24,7 @@ export class ArticleDetailsComponent {
     this.description = this.data.description;
     this.fullDescription = this.data.fullDescription;
     this.createdDate = this.data.createdDate
+    console.log(this.data.fullDescription)
   }
 
   protected close(): void {

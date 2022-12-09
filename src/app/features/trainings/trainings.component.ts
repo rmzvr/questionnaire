@@ -21,6 +21,8 @@ export class TrainingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.articles = this.trainingsService.getArticles();
+   this.trainingsService.getArticles().subscribe((item)=> console.log(item))
+
   }
 
   protected openDialog(item: Article): void {

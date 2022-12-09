@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <a routerLink="/" class="page-link" mat-button color="primary">Application</a>
+  <a routerLink="/"  mat-mini-fab color="primary" aria-label="home-page"><mat-icon>home</mat-icon></a>
 
   <div class="link-menu">
     <a routerLink="/trainings" class="page-link" mat-button color="primary"
@@ -10,7 +10,7 @@
   <span class="example-spacer"></span>
 
   <ng-container *ngIf="signinService.isLoggedIn; else authButtons">
-    <a routerLink="/profile" class="profile-link" mat-mini-fab color="primary" aria-label="profile" *ngIf="context !== 'profile'"><mat-icon>account_circle</mat-icon></a>
+    <a routerLink="/profile" class="profile-link" mat-mini-fab color="primary" aria-label="profile-page" *ngIf="context !== 'profile'"><mat-icon>account_circle</mat-icon></a>
   </ng-container>
 </mat-toolbar>
 

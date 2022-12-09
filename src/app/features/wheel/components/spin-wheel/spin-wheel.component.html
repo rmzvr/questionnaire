@@ -1,0 +1,7 @@
+<div class="wheel-container">
+  <ngx-wheel #wheel [width]='500' [height]='500' [spinDuration]='8' [disableSpinOnClick]='true'
+    [items]="wheelService.wheelItems" [idToLandOn]='wheelService.randomId' [innerRadius]='30' [spinAmount]='10'
+    pointerStrokeColor='transparent' pointerFillColor='transparent' (onSpinComplete)='after()'>
+  </ngx-wheel>
+  <button class="wheel-button" (click)="start()" [disabled]="isButtonDisabled">Spin</button>
+</div>

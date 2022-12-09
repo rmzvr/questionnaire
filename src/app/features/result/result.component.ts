@@ -1,3 +1,4 @@
+import { QuestionsService } from './../questionnaire/services/questions.service';
 import { ConfirmEmailDialogComponent } from './../../shared/components/confirm-email-dialog/confirm-email-dialog.component';
 import { EmailDialogComponent } from './components/email-dialog/email-dialog.component';
 import { Component } from '@angular/core';
@@ -6,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { RegisterDialogComponent } from './components/register-dialog/register-dialog.component';
 import { take } from 'rxjs';
 import { SignupService } from '../signup/services/signup.service';
+import { Result } from '../questionnaire/models/questionnaire.model';
 
 @Component({
   selector: 'app-result',
@@ -16,8 +18,13 @@ export class ResultComponent {
   constructor(
     private router: Router,
     private dialog: MatDialog,
-    private signupService: SignupService
+    private signupService: SignupService,
+    private questionsService: QuestionsService
   ) {}
+
+  public get result(): Result {
+    return this.questionsService.result;
+  }
 
   public navitageToQuestionnairePage(): void {
     this.router.navigate([this.router.url.slice(0, -6)]);
@@ -59,7 +66,7 @@ export class ResultComponent {
             password,
           })
           .subscribe(() => {
-            sessionStorage.clear()
+            sessionStorage.clear();
 
             this.dialog.open(ConfirmEmailDialogComponent);
           });

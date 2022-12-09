@@ -61,7 +61,9 @@ export class FormComponent implements OnInit {
   public finishQuestionnaire(): void {
     const questionnaireId: string = this.activatedRoute.snapshot.params['id'];
 
-    this.questionsService.sendResult(questionnaireId).subscribe(() => {
+    this.questionsService.sendResult(questionnaireId).subscribe((res) => {
+      this.questionsService.result = res;
+
       this.router.navigate([this.router.url + '/result']);
     });
   }

@@ -6,7 +6,7 @@
     {{ currentQuestion.name }}
   </p>
 
-  <ul class="answers">
+  <ul class="answers" [class.simplified]="currentQuestion.answers.length === 2">
     <li class="answer" *ngFor="let answer of currentQuestion.answers"
       [class.selected]="selectedAnswer && selectedAnswer.id === answer.id" (click)="selectAnswer(answer)">
       {{ answer.name }}
@@ -18,7 +18,7 @@
       <mat-icon>arrow_back_ios_new</mat-icon>
     </button>
 
-    <ng-container *ngIf="isLastQuestion; then buttonNext else buttonFinish">
+    <ng-container *ngIf="!isLastQuestion; then buttonNext else buttonFinish">
     </ng-container>
   </nav>
 </div>
@@ -30,6 +30,5 @@
 </ng-template>
 
 <ng-template #buttonFinish>
-  <button mat-flat-button color="primary" (click)="finishQuestionnaire()"
-    [disabled]="!selectedAnswer">Finish</button>
+  <button mat-flat-button color="primary" (click)="finishQuestionnaire()" [disabled]="!selectedAnswer">Finish</button>
 </ng-template>

@@ -14,8 +14,17 @@ import { BASE_URL } from 'src/constants';
 })
 export class QuestionsService {
   public answers = new BehaviorSubject<ExtendedAnswer[]>([]);
+  private _result!: Result;
 
   constructor(private http: HttpClient) {}
+
+  public get result(): Result {
+    return this._result;
+  }
+
+  public set result(value: Result) {
+    this._result = value;
+  }
 
   public getQuestions(id: string): Observable<Question[]> {
     return this.http.get(

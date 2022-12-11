@@ -53,3 +53,11 @@
 .mat-mdc-unelevated-button:not(:disabled) {
   background-color: #019FFF;
 }
+
+.simplified {
+  display: flex;
+
+  .answer {
+    width: 100%;
+  }
+}

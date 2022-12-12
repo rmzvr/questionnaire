@@ -2,7 +2,7 @@ import { QuestionsService } from './../questionnaire/services/questions.service'
 import { ConfirmEmailDialogComponent } from './../../shared/components/confirm-email-dialog/confirm-email-dialog.component';
 import { EmailDialogComponent } from './components/email-dialog/email-dialog.component';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterDialogComponent } from './components/register-dialog/register-dialog.component';
 import { take } from 'rxjs';
@@ -19,7 +19,8 @@ export class ResultComponent {
     private router: Router,
     private dialog: MatDialog,
     private signupService: SignupService,
-    private questionsService: QuestionsService
+    private questionsService: QuestionsService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   public get result(): Result {
@@ -46,13 +47,15 @@ export class ResultComponent {
         sessionStorage.setItem('name', result.name);
         sessionStorage.setItem('email', result.email);
 
-        this.signupService.sendResult({
-          name: result.name,
-          email: result.email,
-          description: this.result.description,
-          points: this.result.totalPoints,
-          questionnaireId: 1
-        }).subscribe()
+        this.signupService
+          .sendResult({
+            name: result.name,
+            email: result.email,
+            description: this.result.description,
+            points: this.result.totalPoints,
+            questionnaireId: this.activatedRoute.snapshot.paramMap.get('id'),
+          })
+          .subscribe();
 
         this.openRegisterDialog();
       });

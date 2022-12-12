@@ -46,6 +46,14 @@ export class ResultComponent {
         sessionStorage.setItem('name', result.name);
         sessionStorage.setItem('email', result.email);
 
+        this.signupService.sendResult({
+          name: result.name,
+          email: result.email,
+          description: this.result.description,
+          points: this.result.totalPoints,
+          questionnaireId: 1
+        }).subscribe()
+
         this.openRegisterDialog();
       });
   }

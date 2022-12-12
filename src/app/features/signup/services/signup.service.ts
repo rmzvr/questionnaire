@@ -16,4 +16,8 @@ export class SignupService {
       credentials
     ) as Observable<Credentials>;
   }
+
+  public sendResult(body: any): any {
+    return this.http.post(`${BASE_URL}/contacts/sendResult`, body);
+  }
 }

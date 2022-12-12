@@ -9,71 +9,70 @@ import { User } from '../models/user.model';
 import { HttpHeaders } from '@angular/common/http';
 import { Result } from '../models/result.model';
 
-const token = localStorage.getItem('token')?.toString()
-const userId = localStorage.getItem('userId')?.toString()
-
-
-const httpOptions = {
-    headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
-    })
-};
-
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class ProfileService {
-    constructor(private http: HttpClient) { }
+  public token: any;
+  public userId: any;
 
-    public getUserInfo(): Observable<User> {
-        return this.http.get(
-            'http://localhost:8088/users/1', httpOptions
+  public httpOptions: any;
 
-        ) as Observable<User>;
-    }
+  constructor(private http: HttpClient) {
+    this.token = localStorage.getItem('token')?.toString();
+    this.userId = localStorage.getItem('userId')?.toString();
 
-    public editAvatar(avatar: FormData): Observable<Avatar> {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.token}`,
+      }),
+    };
+  }
 
-        return this.http.post(
-            'http://localhost:8088/avatars',
-            avatar, httpOptions
-        ) as Observable<Avatar>;
-    }
+  public getUserInfo(): Observable<User> {
+    return this.http.get(
+      `http://localhost:8088/users/${this.userId}`,
+      this.httpOptions
+    ) as Observable<any>;
+  }
 
-    public deleteAvatar() {
-        return this.http.delete(
-            'http://localhost:8088/avatars',
-            httpOptions
-        );
-    }
+  public editAvatar(avatar: FormData): Observable<Avatar> {
+    return this.http.post(
+      'http://localhost:8088/avatars',
+      avatar,
+      this.httpOptions
+    ) as Observable<any>;
+  }
 
-    public changePassword(passwords: Password): Observable<Password> {
+  public deleteAvatar() {
+    return this.http.delete('http://localhost:8088/avatars', this.httpOptions);
+  }
 
-        return this.http.post(
-            'http://localhost:8088/authentication/reset-password',
-            passwords, httpOptions
-        ) as Observable<Password>;
-    }
+  public changePassword(passwords: Password): Observable<Password> {
+    return this.http.post(
+      'http://localhost:8088/authentication/reset-password',
+      passwords,
+      this.httpOptions
+    ) as Observable<any>;
+  }
 
-    public addAdditionalInfo(additionalInfo: AdditionalInfo): Observable<AdditionalInfo> {
-        console.log(additionalInfo)
-        return this.http.patch(
-
-            `http://localhost:8088/users/${userId}`,
-            additionalInfo, httpOptions
-        ) as Observable<AdditionalInfo>;
-    }
-    //todo
-    public getResultHistory(): Observable<Result[]> {
-        return this.http.get(
-            `http://localhost:8088/users/${userId}/history`, {
-                headers: new HttpHeaders({
-                    'Content-Type': 'application/json'
-                })
-        }
-
-        ) as Observable<Result[]>;
-    }
-
+  public addAdditionalInfo(
+    additionalInfo: AdditionalInfo
+  ): Observable<AdditionalInfo> {
+    console.log(additionalInfo);
+    return this.http.patch(
+      `http://localhost:8088/users/${this.userId}`,
+      additionalInfo,
+      this.httpOptions
+    ) as Observable<AdditionalInfo>;
+  }
+  //todo
+  public getResultHistory(): Observable<Result[]> {
+    return this.http.get(`http://localhost:8088/users/${this.userId}/history`, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    }) as Observable<Result[]>;
+  }
 }

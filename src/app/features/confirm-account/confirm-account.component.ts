@@ -16,18 +16,15 @@ export class ConfirmAccountComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params
-      .pipe(
-        switchMap((params: Params): any => {
-          this.confirmAccountService
-            .confirmAccount(params['id'])
-            .subscribe(({ token }) => {
-              localStorage.setItem('token', token);
+    this.activatedRoute.params.subscribe((params: any) => {
+      this.confirmAccountService
+        .confirmAccount(params['id'])
+        .subscribe((res) => {
+          localStorage.setItem('token', res.token);
+          localStorage.setItem('userId', res.userResponseDTO.id);
 
-              this.router.navigate(['/']);
-            });
-        })
-      )
-      .subscribe();
+          this.router.navigate(['/']);
+        });
+    });
   }
 }

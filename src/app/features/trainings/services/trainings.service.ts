@@ -11,7 +11,7 @@ export class TrainingsService {
     constructor(private http: HttpClient) { }
 
     public getArticles(): Observable<Article[]> {
-        
+
         return this.http.get(
             'http://localhost:8088/articles',
         ) as Observable<Article[]>;

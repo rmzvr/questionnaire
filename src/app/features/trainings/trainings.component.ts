@@ -21,7 +21,7 @@ export class TrainingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.articles = this.trainingsService.getArticles();
-   this.trainingsService.getArticles().subscribe((item)=> console.log(item))
+    this.trainingsService.getArticles().subscribe((item) => console.log(item))
 
   }
 

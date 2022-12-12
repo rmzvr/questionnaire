@@ -54,6 +54,7 @@ export class SigninComponent implements OnInit {
       })
       .subscribe((res) => {
         localStorage.setItem('token', res.jwtAccess);
+        localStorage.setItem('userId', res.userResponseDTO.id);
 
         this.router.navigate(['/']);
       });

@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Specialists } from '../models/specialist.model';
 import { ProjectInfo } from '../models/projectInfo.model';
+import { TherapyForm } from '../models/therapyForm.model';
+import { CallForm } from '../models/callForm.model';
 
 
 @Injectable({
@@ -23,5 +25,20 @@ export class HomePageService {
         ) as Observable<Specialists[]>;
     }
 
-    
+    public postCallInfo(userInfo: CallForm): Observable<CallForm> {
+        return this.http.post<CallForm>(
+            'http://localhost:8088/specialists',
+            userInfo
+        );
+    }
+
+    public addTherapyInfo(userInfo: TherapyForm): Observable<TherapyForm> {
+
+        return this.http.post<TherapyForm>(
+            'http://localhost:8088/specialists',
+            userInfo
+        );
+    }
+
+
 }

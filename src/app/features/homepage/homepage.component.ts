@@ -21,9 +21,6 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.specialists = this.homePageService.getSpecialists();
     this.projectInfo = this.homePageService.getProjectInfo();
-   this.homePageService.getSpecialists().subscribe((specialists)=>console.log(specialists))
-
-    
   }
 
 }

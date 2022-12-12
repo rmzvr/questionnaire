@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { HomePageService } from '../../services/home-page.service';
 
 @Component({
   selector: 'app-call-form',
@@ -8,24 +10,38 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 })
 export class CallFormComponent implements OnInit {
 
-  public phoneNumber: string = ''
+  public callForm!: FormGroup;
 
-  constructor(
-    public dialog: MatDialogRef<CallFormComponent>
+  constructor(private formBuilder: FormBuilder,
+    public dialog: MatDialogRef<CallFormComponent>,
+    public homePageService: HomePageService,
   ) { }
 
   ngOnInit(): void {
-
+    this.callForm = this.formBuilder.group({
+      userName: new FormControl(),
+      phoneNumber: new FormControl(),
+    });
   }
 
-  protected add(phoneNumber: string):void {
-    this.phoneNumber = phoneNumber
-    console.log(this.phoneNumber)
+  public get userName(): FormControl {
+    return this.callForm.get('userName') as FormControl
+  }
 
+  public get phoneNumber(): FormControl {
+    return this.callForm.get('phoneNumber') as FormControl
+  }
+
+  protected add(): void {
+    this.homePageService.postCallInfo({
+      name: this.callForm.value['userName'],
+      phoneNumber: this.callForm.value['phoneNumber']
+    })
     this.close()
+
   }
 
-  protected close():void {
+  protected close(): void {
     this.dialog.close()
   }
 

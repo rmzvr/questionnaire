@@ -41,7 +41,10 @@ export class AvatarPanelComponent implements OnInit {
 
     formData.append('avatar', this.avatar);
 
-    this.profileService.editAvatar(formData)
+    this.profileService.editAvatar(formData).subscribe(()=>
+    this.router.navigate(['/profile'])
+
+    )
 
   }
 

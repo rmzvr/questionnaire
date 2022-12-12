@@ -41,7 +41,11 @@ export class ProfileService {
     return this.http.post(
       'http://localhost:8088/avatars',
       avatar,
-      this.httpOptions
+      {
+        headers: new HttpHeaders({
+          Authorization: `Bearer ${this.token}`,
+        }),
+      }
     ) as Observable<any>;
   }
 

@@ -6,5 +6,14 @@ export interface LoginCredentials {
 export interface LoginResponse {
   jwtAccess: string;
   jwtRefresh?: string;
-  userResponseDTO?: string;
+  userResponseDTO: {
+    id: string,
+    image: string,
+    name: string,
+    email: string,
+    birthday: string,
+    gender: string,
+    country: string,
+    role: string
+  };
 }

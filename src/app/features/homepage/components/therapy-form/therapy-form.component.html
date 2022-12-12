@@ -5,29 +5,34 @@
        <p>Please,<a (click)="close()" routerLink="/register">register</a> and return</p>
     </div>
 
-    <div class="register-form-container" *ngIf="isRegister">
+    <div  *ngIf="isRegister" >
+      <form  class="register-form-container" [formGroup]="therapyForm">
         <label class="formLabel">
-            Specialist name:
-                <select class="form-input" name="specialist-name" id="specialist-name" placeholder="Enter specialist" [(ngModel)]="specialistName">
-                    <option value="Dr. Michelle Lind">Dr. Michelle Lind</option>
-                    <option value="Dr.Elizabeth Strong">Dr.Elizabeth Strong</option>
-                    <option value="Dr.Tonia Cassaday">Dr.Tonia Cassaday</option>
-                    <option value="Dr.Dawn Brown">Dr.Dawn Brown</option>
-                </select>
+            Enter your name :
+            <input class="form-input" type="string" id="userName" minlength="2" maxlength="30"
+                placeholder="Enter your name" formControlName="userName">
         </label>
 
         <label class="formLabel">
             Fill phone number:
             <input class="form-input" type="" id="phoneNumber" minlength="8" maxlength="30"
-                placeholder="Enter your phone number" [(ngModel)]="phoneNumber">
+                placeholder="Enter your phone number" formControlName="phoneNumber">
         </label>
 
-        <app-date-input name="fieldName" ngDefaultControl [(ngModel)]="therapyDate"></app-date-input>
+        <label class="formLabel">
+            Specialist name:
+                <select class="form-input" name="specialist-name" id="specialist-name" placeholder="Enter specialist" formControlName="specialistName">
+                    <option  *ngFor="let specialist of specialists | async" value={{specialist.name}}>{{specialist.name}}</option>
+                </select>
+        </label>
+
+        <app-date-input name="fieldName"  (clickEmitter)="getDate($event)"></app-date-input>
+      </form>
     
     </div>
 
     <div class="button-container">
-        <button class="save-button button" id="save" (click)="add(phoneNumber,specialistName,therapyDate)" *ngIf="isRegister">&#10003;</button>
+        <button class="save-button button" id="save" (click)="add()" *ngIf="isRegister">&#10003;</button>
         <button class="cancel-button button" id="cancel" (click)="close()">&#10008;</button>
     </div>
 </div>

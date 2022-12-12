@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from 'src/app/core/models/user.model';
+import { Router } from '@angular/router';
+import { EMPTY, Observable } from 'rxjs';
+import { User } from 'src/app/features/profile/models/user.model';
 import { UserDate } from './mock-data/userInfo';
+import { ProfileService } from './services/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,27 +13,43 @@ import { UserDate } from './mock-data/userInfo';
 
 
 export class ProfileComponent implements OnInit {
-  @Input()
-  public profileImage: string = 'assets/img/profile.png'
-  @Input()
-  protected userName: string = ''
-  @Input()
-  protected birthday: string = '-'
-  @Input()
-  protected country: string = '-'
-  @Input()
-  protected favouriteColor: string = '-'
 
-  protected user: User = UserDate
+  public token: string | null = null
 
-  constructor() { }
+  protected user: User = {
+    id: '',
+    img: '',
+    name: '',
+    email: '',
+    password: ''
+  }
+
+  public profileImage: string = ''
+
+
+  constructor(
+    private profileService: ProfileService,
+    private router: Router
+  ) { }
 
 
   ngOnInit(): void {
+    this.token = localStorage.getItem('token')
+    this.profileService.getUserInfo().subscribe((user) => {
+      this.user = user
+    })
+    //todo
+    this.profileImage = this.user.img || 'assets/img/profile.png'
+
   }
 
   public addItem(removeAvatar: string): void {
     this.profileImage = removeAvatar;
+  }
+
+  public logout() {
+    localStorage.removeItem('token')
+    this.router.navigate(['/']);
   }
 
 }

@@ -1,4 +1,4 @@
-$basic-color: #C1E9FC;
+$basic-color: #c1e9fc;
 
 .example-spacer {
   flex: 1 1 auto;
@@ -15,16 +15,21 @@ $basic-color: #C1E9FC;
   width: 100%;
   z-index: 99;
   font-family: "Cormorant Garamond", serif;
-  a{
+  a {
     font-family: "Cormorant Garamond", serif;
   }
 }
 
-.link-menu{
+.link-menu {
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
-.page-link{
+.page-link {
   font-size: 1em;
+  text-shadow: 1px 1px 2px rgb(26 48 136 / 30%);
+
+  &:hover{
+    text-shadow: none
+  }
 }

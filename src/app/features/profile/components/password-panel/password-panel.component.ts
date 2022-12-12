@@ -12,7 +12,7 @@ import { ProfileService } from '../../services/profile.service';
 export class PasswordPanelComponent implements OnInit {
 
   @Input()
-  public userPas: string = ''
+  public token: string | null = null
   public panelOpenState: boolean = false
   public changePas: boolean = false
   public hide = true;
@@ -57,9 +57,10 @@ export class PasswordPanelComponent implements OnInit {
         currentPassword: this.changePasForm.value['currentPass'],
         newPassword: this.changePasForm.value['newPass'],
         conformNewPassword: this.changePasForm.value['confirmPass']
-      }) .subscribe(() => {
+      }).subscribe(() => {
         this.router.navigate(['/profile']);
       });
+      this.closePanel()
   }
 
   protected closePanel(): void {

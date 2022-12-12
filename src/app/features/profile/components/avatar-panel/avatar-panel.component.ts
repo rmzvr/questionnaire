@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ProfileService } from '../../services/profile.service';
 
 @Component({
   selector: 'app-avatar-panel',
@@ -11,23 +13,41 @@ export class AvatarPanelComponent implements OnInit {
   @Output() removeAvatar = new EventEmitter<string>()
 
   public panelOpenState: boolean = false
-  public avatar: string = ''
+  public avatar: File | undefined = undefined
   public changeAvatar: boolean = false
 
   protected avatarFormControl = new FormControl();
+
+  constructor(
+    private profileService: ProfileService,
+    private router: Router,
+
+  ) { }
 
   ngOnInit() {
 
   }
 
-  protected add(): void {
-    if (!this.avatarFormControl.value) {
-      throw new Error('Change email failed');
+  protected add(event: Event) {
+    this.avatar = (event?.target as HTMLInputElement).files?.[0];
+
+    if (!this.avatar) {
+      return;
     }
-    this.avatar = this.avatarFormControl.value
+
+    console.log((event.target as HTMLInputElement).files)
+
+    const formData = new FormData();
+
+    formData.append('avatar', this.avatar);
+
+    this.profileService.editAvatar(formData)
+
   }
 
   protected remove(): void {
+    this.profileService.deleteAvatar()
+
     this.removeAvatar.emit('assets/img/profile.png');
   }
 }

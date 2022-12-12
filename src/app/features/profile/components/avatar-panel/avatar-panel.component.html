@@ -12,9 +12,7 @@
 
             </div>
             <form class="form" *ngIf="changeAvatar">
-                <mat-form-field appearance="fill">
-                    <ngx-mat-file-input [formControl]="avatarFormControl" (change)="add()"></ngx-mat-file-input>
-                </mat-form-field>
+                    <input id="avatarImage" type="file" [formControl]="avatarFormControl" (change)="add($event)">
             </form>
         </div>
     </mat-expansion-panel>

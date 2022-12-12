@@ -28,15 +28,16 @@ export class ProfileService {
 
     public getUserInfo(): Observable<User> {
         return this.http.get(
-            'http://localhost:8088/users/1',httpOptions
+            'http://localhost:8088/users/1', httpOptions
 
         ) as Observable<User>;
     }
 
     public editAvatar(avatar: FormData): Observable<Avatar> {
+
         return this.http.post(
             'http://localhost:8088/avatars',
-            avatar,httpOptions
+            avatar, httpOptions
         ) as Observable<Avatar>;
     }
 
@@ -60,15 +61,17 @@ export class ProfileService {
         return this.http.patch(
 
             `http://localhost:8088/users/${userId}`,
-            additionalInfo,httpOptions
+            additionalInfo, httpOptions
         ) as Observable<AdditionalInfo>;
     }
-//todo
+    //todo
     public getResultHistory(): Observable<Result[]> {
-        console.log(httpOptions)
         return this.http.get(
-            `http://localhost:8088/users/${userId}/history`, {headers: new HttpHeaders({
-                'Content-Type': 'application/json'})}
+            `http://localhost:8088/users/${userId}/history`, {
+                headers: new HttpHeaders({
+                    'Content-Type': 'application/json'
+                })
+        }
 
         ) as Observable<Result[]>;
     }

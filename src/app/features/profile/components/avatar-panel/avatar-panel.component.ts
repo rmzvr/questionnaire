@@ -13,14 +13,14 @@ export class AvatarPanelComponent implements OnInit {
   @Output() removeAvatar = new EventEmitter<string>()
 
   public panelOpenState: boolean = false
-  public avatar: string = ''
+  public avatar: File | undefined = undefined
   public changeAvatar: boolean = false
 
   protected avatarFormControl = new FormControl();
 
   constructor(
     private profileService: ProfileService,
-    private router: Router
+    private router: Router,
 
   ) { }
 
@@ -28,19 +28,19 @@ export class AvatarPanelComponent implements OnInit {
 
   }
 
-  protected add(): void {
-    if (!this.avatarFormControl.value) {
-      throw new Error('Change email failed');
+  protected add(event: Event) {
+    this.avatar = (event?.target as HTMLInputElement).files?.[0];
+
+    if (!this.avatar) {
+      return;
     }
+
+    console.log((event.target as HTMLInputElement).files)
 
     const formData = new FormData();
 
-    console.log(this.avatarFormControl.value)
+    formData.append('avatar', this.avatar);
 
-
-    formData.append('avatar', this.avatarFormControl.value);
-
-    console.log(formData)
     this.profileService.editAvatar(formData)
 
   }

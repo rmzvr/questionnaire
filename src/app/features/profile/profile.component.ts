@@ -13,23 +13,19 @@ import { ProfileService } from './services/profile.service';
 
 
 export class ProfileComponent implements OnInit {
-  @Input()
-  public profileImage: string = 'assets/img/profile.png'
-  @Input()
-  protected userName: string = ''
-  @Input()
-  protected birthday: string = '-'
-  @Input()
-  protected country: string = '-'
 
   public token: string | null = null
 
   protected user: User = {
     id: '',
+    img: '',
     name: '',
     email: '',
     password: ''
   }
+
+  public profileImage: string = ''
+
 
   constructor(
     private profileService: ProfileService,
@@ -42,13 +38,16 @@ export class ProfileComponent implements OnInit {
     this.profileService.getUserInfo().subscribe((user) => {
       this.user = user
     })
+    //todo
+    this.profileImage = this.user.img || 'assets/img/profile.png'
+
   }
 
   public addItem(removeAvatar: string): void {
     this.profileImage = removeAvatar;
   }
 
-  public logout(){
+  public logout() {
     localStorage.removeItem('token')
     this.router.navigate(['/']);
   }

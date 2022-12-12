@@ -10,6 +10,8 @@ import { HttpHeaders } from '@angular/common/http';
 import { Result } from '../models/result.model';
 
 const token = localStorage.getItem('token')?.toString()
+const userId = localStorage.getItem('userId')?.toString()
+
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -56,8 +58,8 @@ export class ProfileService {
     public addAdditionalInfo(additionalInfo: AdditionalInfo): Observable<AdditionalInfo> {
         console.log(additionalInfo)
         return this.http.patch(
-            //todo user id
-            'http://localhost:8088/users/1',
+
+            `http://localhost:8088/users/${userId}`,
             additionalInfo,httpOptions
         ) as Observable<AdditionalInfo>;
     }
@@ -65,7 +67,7 @@ export class ProfileService {
     public getResultHistory(): Observable<Result[]> {
         console.log(httpOptions)
         return this.http.get(
-            'http://localhost:8088/users/1/history', {headers: new HttpHeaders({
+            `http://localhost:8088/users/${userId}/history`, {headers: new HttpHeaders({
                 'Content-Type': 'application/json'})}
 
         ) as Observable<Result[]>;

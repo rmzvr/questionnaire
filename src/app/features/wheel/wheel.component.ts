@@ -1,5 +1,7 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component } from '@angular/core';
 import { WheelService } from 'src/app/features/wheel/services/wheel.service';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @Component({
   selector: 'app-wheel',

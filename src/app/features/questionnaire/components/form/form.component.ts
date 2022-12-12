@@ -30,7 +30,7 @@ export class FormComponent implements OnInit {
   }
 
   public get isLastQuestion(): boolean {
-    return this.questions.length - 1 !== this.currentQuestionIndex;
+    return this.questions.length - 1 == this.currentQuestionIndex;
   }
 
   public get selectedAnswer(): Answer {
@@ -56,12 +56,18 @@ export class FormComponent implements OnInit {
       questionId: this.currentQuestion.id,
       answerId: answer.id,
     });
+
+    if (!this.isLastQuestion) {
+      this.nextQuestion();
+    }
   }
 
   public finishQuestionnaire(): void {
     const questionnaireId: string = this.activatedRoute.snapshot.params['id'];
 
-    this.questionsService.sendResult(questionnaireId).subscribe(() => {
+    this.questionsService.sendResult(questionnaireId).subscribe((res) => {
+      this.questionsService.result = res;
+
       this.router.navigate([this.router.url + '/result']);
     });
   }

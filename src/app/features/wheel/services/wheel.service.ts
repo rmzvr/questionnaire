@@ -30,7 +30,5 @@ export class WheelService {
     this.statItems[id].count++;
 
     answer === true ? this.statItems[id].yes++ : this.statItems[id].no++;
-
-    console.log(this.statItems[id]);
   }
 }

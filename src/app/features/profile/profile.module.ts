@@ -26,6 +26,7 @@ import { MatCardModule } from '@angular/material/card';
 
 
 
+
 @NgModule({
   declarations: [
     ProfileComponent,
@@ -52,7 +53,8 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     MatSelectCountryModule.forRoot('de'),
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+
 
   ],
   exports: [ProfileComponent]

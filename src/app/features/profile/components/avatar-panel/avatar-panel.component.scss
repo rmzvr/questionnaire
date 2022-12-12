@@ -20,15 +20,7 @@ mat-expansion-panel {
 form {
     display: flex;
     align-self: center;
-
-    mat-form-field {
-        font-size: 1em;
-        margin-top: 15px;
-
-        ngx-mat-file-input {
-            justify-content: center;
-        }
-    }
+    margin: 20px;
 }
 
 .button {

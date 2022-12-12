@@ -31,11 +31,18 @@ export class ProfileService {
         ) as Observable<User>;
     }
 
-    public AddAvatar(avatar: Avatar): Observable<Avatar> {
+    public editAvatar(avatar: Avatar): Observable<Avatar> {
         return this.http.post(
-            'http://localhost:8088/...',
+            'http://localhost:8088/avatars',
             avatar
         ) as Observable<Avatar>;
+    }
+
+    public deleteAvatar() {
+        return this.http.delete(
+            'http://localhost:8088/avatars',
+            httpOptions
+        );
     }
 
     public changePassword(passwords: Password): Observable<Password> {

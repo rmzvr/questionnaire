@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ProfileService } from '../../services/profile.service';
 
 @Component({
   selector: 'app-avatar-panel',
@@ -16,6 +18,12 @@ export class AvatarPanelComponent implements OnInit {
 
   protected avatarFormControl = new FormControl();
 
+  constructor(
+    private profileService: ProfileService,
+    private router: Router
+
+  ) { }
+
   ngOnInit() {
 
   }
@@ -24,10 +32,13 @@ export class AvatarPanelComponent implements OnInit {
     if (!this.avatarFormControl.value) {
       throw new Error('Change email failed');
     }
-    this.avatar = this.avatarFormControl.value
+    // this.profileService.editAvatar(this.avatar)
+
   }
 
   protected remove(): void {
+        this.profileService.deleteAvatar()
+
     this.removeAvatar.emit('assets/img/profile.png');
   }
 }

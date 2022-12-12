@@ -26,7 +26,7 @@ export class AvatarPanelComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-console.log(this.avatarName)
+
   }
 
   protected add(event: Event) {

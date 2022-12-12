@@ -27,7 +27,7 @@ export class HomePageService {
 
     public postCallInfo(userInfo: CallForm): Observable<CallForm> {
         return this.http.post<CallForm>(
-            'http://localhost:8088/specialists',
+            'http://localhost:8088/contacts/callRequest',
             userInfo
         );
     }
@@ -35,7 +35,7 @@ export class HomePageService {
     public addTherapyInfo(userInfo: TherapyForm): Observable<TherapyForm> {
 
         return this.http.post<TherapyForm>(
-            'http://localhost:8088/specialists',
+            'http://localhost:8088/contacts/consultationRequest',
             userInfo
         );
     }

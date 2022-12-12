@@ -49,8 +49,17 @@ export class ProfileService {
     ) as Observable<any>;
   }
 
-  public deleteAvatar() {
-    return this.http.delete('http://localhost:8088/avatars', this.httpOptions);
+  public getAvatar(name:string) {
+    return this.http.get(`http://localhost:8088/avatars/${name}`, {
+      responseType: 'blob',
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${this.token}`,
+      }),
+    });
+  }
+
+  public deleteAvatar(imageName: string) {
+    return this.http.delete(`http://localhost:8088/avatars/${imageName}`, this.httpOptions);
   }
 
   public changePassword(passwords: Password): Observable<Password> {

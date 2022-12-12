@@ -73,7 +73,6 @@ export class ProfileService {
   public addAdditionalInfo(
     additionalInfo: AdditionalInfo
   ): Observable<AdditionalInfo> {
-    console.log(additionalInfo);
     return this.http.patch(
       `http://localhost:8088/users/${this.userId}`,
       additionalInfo,

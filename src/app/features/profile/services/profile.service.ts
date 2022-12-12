@@ -36,7 +36,7 @@ export class ProfileService {
     public editAvatar(avatar: FormData): Observable<Avatar> {
         return this.http.post(
             'http://localhost:8088/avatars',
-            avatar
+            avatar,httpOptions
         ) as Observable<Avatar>;
     }
 

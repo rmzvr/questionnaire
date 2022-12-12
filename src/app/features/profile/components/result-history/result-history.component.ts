@@ -19,7 +19,7 @@ public resultHistory: Observable<Result[]> = EMPTY
   ) { }
 
   ngOnInit(): void {
-    // this.resultHistory = this.profileService.getResultHistory()
+   this.profileService.getResultHistory().subscribe((result)=> console.log(result))
     
   }
    results = [{

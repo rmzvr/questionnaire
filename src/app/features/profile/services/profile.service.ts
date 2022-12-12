@@ -31,7 +31,7 @@ export class ProfileService {
         ) as Observable<User>;
     }
 
-    public editAvatar(avatar: Avatar): Observable<Avatar> {
+    public editAvatar(avatar: FormData): Observable<Avatar> {
         return this.http.post(
             'http://localhost:8088/avatars',
             avatar
@@ -61,10 +61,12 @@ export class ProfileService {
             additionalInfo,httpOptions
         ) as Observable<AdditionalInfo>;
     }
-
+//todo
     public getResultHistory(): Observable<Result[]> {
+        console.log(httpOptions)
         return this.http.get(
-            'http://localhost:8088/...',httpOptions
+            'http://localhost:8088/users/1/history', {headers: new HttpHeaders({
+                'Content-Type': 'application/json'})}
 
         ) as Observable<Result[]>;
     }

@@ -32,12 +32,21 @@ export class AvatarPanelComponent implements OnInit {
     if (!this.avatarFormControl.value) {
       throw new Error('Change email failed');
     }
-    // this.profileService.editAvatar(this.avatar)
+
+    const formData = new FormData();
+
+    console.log(this.avatarFormControl.value)
+
+
+    formData.append('avatar', this.avatarFormControl.value);
+
+    console.log(formData)
+    this.profileService.editAvatar(formData)
 
   }
 
   protected remove(): void {
-        this.profileService.deleteAvatar()
+    this.profileService.deleteAvatar()
 
     this.removeAvatar.emit('assets/img/profile.png');
   }

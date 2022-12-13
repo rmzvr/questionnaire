@@ -36,9 +36,9 @@ export class CallFormComponent implements OnInit {
     this.homePageService.postCallInfo({
       name: this.callForm.value['userName'],
       phoneNumber: this.callForm.value['phoneNumber']
-    })
-    this.close()
-
+    }).subscribe(() => {
+      this.close()
+    });
   }
 
   protected close(): void {

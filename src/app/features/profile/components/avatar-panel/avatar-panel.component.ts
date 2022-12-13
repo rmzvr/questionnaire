@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProfileService } from '../../services/profile.service';
@@ -12,6 +12,7 @@ export class AvatarPanelComponent implements OnInit {
 
   @Output() removeAvatar = new EventEmitter<string>()
 
+  @Input() avatarName :string = ''
   public panelOpenState: boolean = false
   public avatar: File | undefined = undefined
   public changeAvatar: boolean = false
@@ -35,19 +36,18 @@ export class AvatarPanelComponent implements OnInit {
       return;
     }
 
-    console.log((event.target as HTMLInputElement).files)
-
     const formData = new FormData();
 
     formData.append('avatar', this.avatar);
 
-    this.profileService.editAvatar(formData)
+    this.profileService.editAvatar(formData).subscribe(() =>
+      this.router.navigate(['/profile'])
+
+    )
 
   }
 
   protected remove(): void {
-    this.profileService.deleteAvatar()
-
-    this.removeAvatar.emit('assets/img/profile.png');
+    this.removeAvatar.emit();
   }
 }

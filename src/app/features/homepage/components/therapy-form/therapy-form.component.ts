@@ -58,10 +58,9 @@ export class TherapyFormComponent implements OnInit {
       phoneNumber: this.therapyForm.value['phoneNumber'],
       specialist: this.therapyForm.value['specialistName'],
       date: this.therapyDate
-    })
-
-    this.close()
-
+    }).subscribe(() => {
+      this.close();
+    });
   }
 
   protected close(): void {
